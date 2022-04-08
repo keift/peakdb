@@ -1,0 +1,35 @@
+{
+  "name": "peak.db",
+  "author": "paiode",
+  "version": "2.0.0",
+  "description": "Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.",
+  "license": "MIT",
+  "main": "main.js",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "better-sqlite3": "^7.5.0",
+    "bson": "^4.6.1",
+    "find-remove": "^4.0.4",
+    "fs": "^0.0.2",
+    "lodash": "^4.17.21",
+    "nanoid": "^3.3.1",
+    "path": "^0.12.7"
+  },
+  "engines": {
+    "node": ">= 12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paiode/peak.db.git"
+  },
+  "keywords": [
+    "peak",
+    "peakdb",
+    "database",
+    "db",
+    "sql",
+    "nosql",
+    "document",
+    "key-value"
+  ]
+}
