@@ -27,7 +27,6 @@ Fast and advanced, document based and key-value based NoSQL database that able t
   * **Added find and filter with JSON.** In your document based collection, you can also use JSON for find and filter operations instead of functions. You can find more information in the documentation.
   * **Data read and write optimized.** Your data has been rendered faster and unnecessary RAM loss has been prevented.
   * **`CollectionOptions.Type` added.** This allows you to specify type of your collection. Valid values: `DOCUMENT_BASED` and `KEY_VALUE_BASED`
-  * **`CollectionOptions.Delete_Empty_Data` added.** If this is active, it automatically deletes empty data so no unnecessary data is retained.
   * **`CollectionOptions.Activate_Destroy_Function` added.** If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command.
   * **`<Collection>.Set()` added.** This allows you to set a data to your key-value based collection.
   * **`<Collection>.Get()` added.** This allows you to get a data into your key-value based collection.
@@ -64,11 +63,6 @@ const example_collection = new PeakDB.Collection({
   "indicate_created_timestamp": false, // If this is active, will be automatically specified timestamp when documents are created. (no required, default: false)
   "indicate_updated_at": false, // If this is active, will be automatically specified date when documents are updated. (no required, default: false)
   "indicate_updated_timestamp": false, // If this is active, will be automatically specified timestamp when documents are updated. (no required, default: false)
-  
-  /*
-    For key-value based collections
-  */
-  "delete_empty_data": false, // If this is active, it automatically deletes empty data so no unnecessary data is retained. (no required, default: false)
   
   /*
     Can be used on all collection types
