@@ -36,7 +36,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
   * **`<Collection>.Reduce()` added.** This allows you to reduce number in your key-value based collection.
   * **`<Collection>.Destroy()` added.** This serves to completely destroy the data in your collection. You need to activate it with the `activate_destroy_function` option.
 
-[*... see all*](UPDATES.md#updates)
+[*... see all*](CHANGELOG.md#change-log)
 
 ## Installation
 ```
