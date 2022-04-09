@@ -4,7 +4,6 @@
   * **Added find and filter with JSON.** In your document based collection, you can also use JSON for find and filter operations instead of functions. You can find more information in the documentation.
   * **Data read and write optimized.** Your data has been rendered faster and unnecessary RAM loss has been prevented.
   * **`CollectionOptions.Type` added.** This allows you to specify type of your collection. Valid values: `DOCUMENT_BASED` and `KEY_VALUE_BASED`
-  * **`CollectionOptions.Delete_Empty_Data` added.** If this is active, it automatically deletes empty data so no unnecessary data is retained.
   * **`CollectionOptions.Activate_Destroy_Function` added.** If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command.
   * **`<Collection>.Set()` added.** This allows you to set a data to your key-value based collection.
   * **`<Collection>.Get()` added.** This allows you to get a data into your key-value based collection.
