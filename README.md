@@ -36,7 +36,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
   * **`<Collection>.Reduce()` added.** This allows you to reduce number in your key-value based collection.
   * **`<Collection>.Destroy()` added.** This serves to completely destroy the data in your collection. You need to activate it with the `activate_destroy_function` option.
 
-[*... see all*](CHANGELOG.md#change-log)
+[*... see all*](UPDATES.md#updates)
 
 ## Installation
 ```
@@ -81,7 +81,7 @@ const example_collection = new PeakDB.Collection({
 ### Examples for Document Based Collections
 ```js
 const PeakDB = require("peak.db");
-const accounts = new PeakDB.Collection({"name": "ACCOUNTS", "base_type": "DOCUMENT", ...options});
+const accounts = new PeakDB.Collection({"name": "ACCOUNTS", "type": "DOCUMENT_BASED", ...options});
 
 // Insert a Document
 accounts.insert({"email": "fir4tozden@gmail.com", "username": "fir4tozden", "password": "12345678", "region": "Muğla"});
@@ -171,7 +171,7 @@ accounts.delete(document._id);
 ### Examples for Key-Value Based Collections
 ```js
 const PeakDB = require("peak.db");
-const user_settings = new PeakDB.Collection({"name": "USER_SETTINGS", "base_type": "KEY_VALUE", ...options});
+const user_settings = new PeakDB.Collection({"name": "USER_SETTINGS", "type": "KEY_VALUE_BASED", ...options});
 
 // Set a Data
 user_settings.set("USER_1", {"friend_requests": true}); // -> {"friend_requests": true}
