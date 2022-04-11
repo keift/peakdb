@@ -1,6 +1,6 @@
 # Change Log
 ## v1.3.1 → v2.0.0
-* **Added new collection type.** You can now use your data on key-value based. Thanks to the newly added key-value based collection type, you do not have to keep your data in a document based format.
+  * **Added new collection type.** You can now use your data on key-value based. Thanks to the newly added key-value based collection type, you do not have to keep your data in a document based format.
   * **Added find and filter with JSON.** In your document based collection, you can also use JSON for find and filter operations instead of functions. You can find more information in document based collection examples.
   * **Data read and write optimized.** Your data has been rendered faster and unnecessary RAM loss has been prevented.
   * **`CollectionOptions.Type` added.** This allows you to specify type of your collection. Valid values: `DOCUMENT_BASED` and `KEY_VALUE_BASED`
