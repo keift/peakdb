@@ -1,4 +1,6 @@
 # Change Log
+## v2.0.2 → v2.1.0
+  * **`<Collection>.Has()` added.** You can check if a data exists. It can be used in both types of collections.
 ## v1.3.1 → v2.0.0
   * **Added new collection type.** You can now use your data on key-value based. Thanks to the newly added key-value based collection type, you do not have to keep your data in a document based format.
   * **Added find and filter with JSON.** In your document based collection, you can also use JSON for find and filter operations instead of functions. You can find more information in document based collection examples.
