@@ -22,6 +22,8 @@ Fast and advanced, document based and key-value based NoSQL database that able t
   * Automatically or manual backup
 
 ## Latest Updates
+### v2.0.2 → v2.1.0
+  * **`<Collection>.Has()` added.** You can check if a data exists. It can be used in both types of collections.
 ### v1.3.1 → v2.0.0
   * **Added new collection type.** You can now use your data on key-value based. Thanks to the newly added key-value based collection type, you do not have to keep your data in a document based format.
   * **Added find and filter with JSON.** In your document based collection, you can also use JSON for find and filter operations instead of functions. You can find more information in document based collection examples.
@@ -144,6 +146,12 @@ accounts.filter({"region": "Muğla"});
   ]
 */
 
+// Check if Document Exists
+accounts.has(document => document.email === "fir4tozden@gmail.com");
+// or
+accounts.has({"email": "fir4tozden@gmail.com"});
+// true
+
 // Update a Document
 let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
 accounts.update(document._id, {"email": "fir4tozden@gmail.com", "username": "hey_im_fir4tozden", "password": "87654321", "region": "İstanbul"});
@@ -187,6 +195,10 @@ user_settings.push("USER_1.hobbies", "Reading Book"); // -> {"friend_requests": 
 
 // Remove a Data from Array
 user_settings.remove("USER_1.hobbies", "Watching TV"); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"]}
+
+// Check if Data Exists
+user_settings.has("USER_1.hobbies"); // -> true
+user_settings.has("USER_1.hobbies", "Watching TV"); // -> false
 
 // Increase Number
 user_settings.increase("USER_1.age", 15); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 15}
