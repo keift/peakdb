@@ -57,15 +57,15 @@ module.exports.document = {
     }
     , find: (e, t, r) => {
         if (!r) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mNot specified: Collection.Find(Params)");
-        if ("function" != typeof r) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mInvalid params: Collection.Find(Params)");
+        if ("function" != typeof r && !1 === isJSON(r)) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mInvalid params: Collection.Find(Params)");
         let o = e.get()
             , l = lodash.find(o, r);
-        if (l) return !0 === t.detailed_debugger_logs && Debugger.log("\x1b[35m(Collection#" + t.name + "): \x1b[32mDocument with ID '\x1b[35m" + id + "\x1b[32m' found."), l;
+        if (l) return !0 === t.detailed_debugger_logs && Debugger.log("\x1b[35m(Collection#" + t.name + "): \x1b[32mDocument with ID '\x1b[35m" + l._id + "\x1b[32m' found."), l;
         !0 === t.detailed_debugger_logs && Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mDocument not found.")
     }
     , filter: (e, t, r) => {
         if (!r) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mNot specified: Collection.Filter(Params)");
-        if ("function" != typeof r) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mInvalid params: Collection.Filter(Params)");
+        if ("function" != typeof r && !1 === isJSON(r)) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mInvalid params: Collection.Filter(Params)");
         let o = e.get()
             , l = lodash.filter(o, r);
         return 0 === l.length ? !0 === t.detailed_debugger_logs && Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mDocuments not found.") : !0 === t.detailed_debugger_logs && Debugger.log("\x1b[35m(Collection#" + t.name + "): \x1b[32m\x1b[35m" + filterNumber(l.length) + "\x1b[32m documents found."), l
