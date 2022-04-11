@@ -199,6 +199,7 @@ user_settings.remove("USER_1.hobbies", "Watching TV"); // -> {"friend_requests":
 // Check if Data Exists
 user_settings.has("USER_1.hobbies"); // -> true
 user_settings.has("USER_1.hobbies", "Watching TV"); // -> false
+//                                       ^^^ for array
 
 // Increase Number
 user_settings.increase("USER_1.age", 15); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 15}
