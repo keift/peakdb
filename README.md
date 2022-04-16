@@ -23,8 +23,8 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 ## Latest Updates
 ### v2.1.0 → v2.2.0
-  * **`<KeyValueBasedCollection>.Find()` added.** You can find the data in array in key-value based collections.
-  * **`<KeyValueBasedCollection>.Filter()` added.** You can filter data in array in key-value based collections.
+  * **`<Collection>.Find()` added.** You can find the data in array in key-value based collections.
+  * **`<Collection>.Filter()` added.** You can filter data in array in key-value based collections.
 ### v2.0.2 → v2.1.0
   * **`<Collection>.Has()` added.** You can check if a data exists. It can be used in both types of collections.
 ### v1.3.1 → v2.0.0
@@ -33,13 +33,13 @@ Fast and advanced, document based and key-value based NoSQL database that able t
   * **Data read and write optimized.** Your data has been rendered faster and unnecessary RAM loss has been prevented.
   * **`CollectionOptions.Type` added.** This allows you to specify type of your collection. Valid values: `DOCUMENT_BASED` and `KEY_VALUE_BASED`
   * **`CollectionOptions.Activate_Destroy_Function` added.** If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command.
-  * **`<KeyValueBasedCollection>.Set()` added.** This allows you to set a data to your key-value based collection.
-  * **`<KeyValueBasedCollection>.Get()` added.** This allows you to get a data into your key-value based collection.
-  * **`<KeyValueBasedCollection>.Push()` added.** This allows you to push a data to Array in your key-value based collection.
-  * **`<KeyValueBasedCollection>.Remove()` added.** This allows you to remove a data from Array in your key-value based collection.
-  * **`<KeyValueBasedCollection>.Increase()` added.** This allows you to increase number in your key-value based collection.
-  * **`<KeyValueBasedCollection>.Reduce()` added.** This allows you to reduce number in your key-value based collection.
-  * **`<KeyValueBasedCollection>.Destroy()` added.** This serves to completely destroy the data in your collection. You need to activate it with the `activate_destroy_function` option.
+  * **`<Collection>.Set()` added.** This allows you to set a data to your key-value based collection.
+  * **`<Collection>.Get()` added.** This allows you to get a data into your key-value based collection.
+  * **`<Collection>.Push()` added.** This allows you to push a data to Array in your key-value based collection.
+  * **`<Collection>.Remove()` added.** This allows you to remove a data from Array in your key-value based collection.
+  * **`<Collection>.Increase()` added.** This allows you to increase number in your key-value based collection.
+  * **`<Collection>.Reduce()` added.** This allows you to reduce number in your key-value based collection.
+  * **`<Collection>.Destroy()` added.** This serves to completely destroy the data in your collection. You need to activate it with the `activate_destroy_function` option.
 
 [*... see all*](CHANGELOG.md#change-log)
 
