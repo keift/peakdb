@@ -185,7 +185,21 @@ const PeakDB = require("peak.db");
 const user_settings = new PeakDB.Collection({"name": "USER_SETTINGS", "type": "KEY_VALUE_BASED", ...options});
 
 // Set a Data
-user_settings.set("USER_1", {"friends": [{"id": "USER_2", "name": "Nehir", "region": "İstanbul"}, {"id": "USER_3", "name": "Nehir", "region": "İstanbul"}], "friend_requests": true});
+user_settings.set("USER_1", {
+  "friends": [
+    {
+      "id": "USER_2",
+      "name": "Nehir",
+      "region": "İstanbul"
+    },
+    {
+      "id": "USER_3",
+      "name": "Nehir",
+      "region": "İstanbul"
+    }
+  ],
+  "friend_requests": true
+});
 /*
   {
     "friends": [
@@ -206,18 +220,7 @@ user_settings.set("USER_1", {"friends": [{"id": "USER_2", "name": "Nehir", "regi
 user_settings.set("USER_1.direct_messages", false);
 /*
   {
-    "friends": [
-      {
-        "id": "USER_2",
-        "name": "Nehir",
-        "region": "İstanbul"
-      },
-      {
-        "id": "USER_3",
-        "name": "Deniz",
-        "region": "İstanbul"
-      }
-    ],
+    "friends": [ ... ],
     "friend_requests": true,
     "direct_messages": false
   }
@@ -249,18 +252,7 @@ user_settings.get("USER_1.direct_messages"); // -> false
 user_settings.push("USER_1.hobbies", "Watching TV");
 /*
   {
-    "friends": [
-      {
-        "id": "USER_2",
-        "name": "Nehir",
-        "region": "İstanbul"
-      },
-      {
-        "id": "USER_3",
-        "name": "Deniz",
-        "region": "İstanbul"
-      }
-    ],
+    "friends": [ ... ],
     "friend_requests": true,
     "direct_messages": false,
     "hobbies": [
@@ -271,18 +263,7 @@ user_settings.push("USER_1.hobbies", "Watching TV");
 user_settings.push("USER_1.hobbies", "Reading Book");
 /*
   {
-    "friends": [
-      {
-        "id": "USER_2",
-        "name": "Nehir",
-        "region": "İstanbul"
-      },
-      {
-        "id": "USER_3",
-        "name": "Deniz",
-        "region": "İstanbul"
-      }
-    ],
+    "friends": [ ... ],
     "friend_requests": true,
     "direct_messages": false,
     "hobbies": [
@@ -296,18 +277,7 @@ user_settings.push("USER_1.hobbies", "Reading Book");
 user_settings.remove("USER_1.hobbies", "Watching TV");
 /*
   {
-    "friends": [
-      {
-        "id": "USER_2",
-        "name": "Nehir",
-        "region": "İstanbul"
-      },
-      {
-        "id": "USER_3",
-        "name": "Deniz",
-        "region": "İstanbul"
-      }
-    ],
+    "friends": [ ... ],
     "friend_requests": true,
     "direct_messages": false,
     "hobbies": [
