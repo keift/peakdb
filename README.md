@@ -311,16 +311,53 @@ user_settings.has("USER_1.hobbies", "Watching TV"); // -> false
 ```
 Increase Number
 ```js
-user_settings.increase("USER_1.age", 15); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 15}
-user_settings.increase("USER_1.age", 1); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 16}
+user_settings.increase("USER_1.age", 15);
+/*
+  {
+    "friends": [ ... ],
+    "friend_requests": true,
+    "direct_messages": false,
+    "hobbies": [
+      "Reading Book"
+    ],
+    "age": 15
+  }
+*/
+user_settings.increase("USER_1.age", 1);
+/*
+  {
+    "friends": [ ... ],
+    "friend_requests": true,
+    "direct_messages": false,
+    "hobbies": [ ... ],
+    "age": 16
+  }
+*/
 ```
 Reduce Number
 ```js
-user_settings.reduce("USER_1.age", 5); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 11}
+user_settings.reduce("USER_1.age", 5);
+/*
+  {
+    "friends": [ ... ],
+    "friend_requests": true,
+    "direct_messages": false,
+    "hobbies": [ ... ],
+    "age": 11
+  }
+*/
 ```
 Delete a Data
 ```js
-user_settings.delete("USER_1.direct_messages"); // -> {"friend_requests": true, "hobbies": ["Reading Book"], "age": 11}
+user_settings.delete("USER_1.direct_messages");
+/*
+  {
+    "friends": [ ... ],
+    "friend_requests": true,
+    "hobbies": [ ... ],
+    "age": 11
+  }
+*/
 ```
 
 ### Backup Collection
