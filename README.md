@@ -186,7 +186,7 @@ const user_settings = new PeakDB.Collection({"name": "USER_SETTINGS", "type": "K
 
 // Set a Data
 user_settings.set("USER_1", {
-  "friends": [{"id": "USER_2", "name": "Nehir", "region": "İstanbul"}, {"id": "USER_3", "name": "Deniz", "region": "İstanbul"}],
+  "friends": [{"id": "USER_2", "name": "Nehir", "region": "Muğla"}, {"id": "USER_3", "name": "Deniz", "region": "Muğla"}],
   "friend_requests": true
 });
 /*
@@ -195,12 +195,12 @@ user_settings.set("USER_1", {
       {
         "id": "USER_2",
         "name": "Nehir",
-        "region": "İstanbul"
+        "region": "Muğla"
       },
       {
         "id": "USER_3",
         "name": "Deniz",
-        "region": "İstanbul"
+        "region": "Muğla"
       }
     ],
     "friend_requests": true
@@ -223,12 +223,12 @@ user_settings.get("USER_1");
       {
         "id": "USER_2",
         "name": "Nehir",
-        "region": "İstanbul"
+        "region": "Muğla"
       },
       {
         "id": "USER_3",
         "name": "Deniz",
-        "region": "İstanbul"
+        "region": "Muğla"
       }
     ],
     "friend_requests": true,
@@ -276,25 +276,25 @@ user_settings.remove("USER_1.hobbies", "Watching TV");
 */
 
 // Find Value from Array
-user_settings.find("USER_1.friends", value => value.name === "Nehir"); // -> {"id": "USER_2", "name": "Nehir", "region": "İstanbul"}
+user_settings.find("USER_1.friends", value => value.name === "Nehir"); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
 // or
-user_settings.find("USER_1.friends", {"name": "Nehir"}); // -> {"id": "USER_2", "name": "Nehir", "region": "İstanbul"}
+user_settings.find("USER_1.friends", {"name": "Nehir"}); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
 
 // Filter Values from Array
-user_settings.filter("USER_1.friends", value => value.region === "İstanbul");
+user_settings.filter("USER_1.friends", value => value.region === "Muğla");
 // or
-user_settings.filter("USER_1.friends", {"region": "İstanbul"});
+user_settings.filter("USER_1.friends", {"region": "Muğla"});
 /*
   [
     {
       "id": "USER_2",
       "name": "Nehir",
-      "region": "İstanbul"
+      "region": "Muğla"
     },
     {
       "id": "USER_3",
       "name": "Deniz",
-      "region": "İstanbul"
+      "region": "Muğla"
     }
   ]
 */
