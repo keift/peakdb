@@ -278,13 +278,13 @@ user_settings.remove("USER_1.hobbies", "Watching TV");
   }
 */
 ```
-Find Value from Array
+Find Data from Array
 ```js
 user_settings.find("USER_1.friends", value => value.name === "Nehir"); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
 // or
 user_settings.find("USER_1.friends", {"name": "Nehir"}); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
 ```
-Filter Values from Array
+Filter Data from Array
 ```js
 user_settings.filter("USER_1.friends", value => value.region === "Muğla");
 // or
