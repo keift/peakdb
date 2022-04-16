@@ -84,9 +84,8 @@ const example_collection = new PeakDB.Collection({
 ```
 
 ### Examples for Document Based Collections
-Insert a Document
+**Insert a Document**
 ```js
-
 accounts.insert({"email": "fir4tozden@gmail.com", "username": "fir4tozden", "password": "12345678", "region": "Muğla"});
 /*
   {
@@ -101,7 +100,8 @@ accounts.insert({"email": "fir4tozden@gmail.com", "username": "fir4tozden", "pas
   }
 */
 ```
-Find a Document
+
+**Find a Document**
 ```js
 accounts.find(document => document.email === "fir4tozden@gmail.com");
 // or
@@ -119,7 +119,8 @@ accounts.find({"email": "fir4tozden@gmail.com"});
   }
 */
 ```
-Filter Documents
+
+**Filter Documents**
 ```js
 accounts.filter(document => document.region === "Muğla");
 // or
@@ -149,14 +150,16 @@ accounts.filter({"region": "Muğla"});
   ]
 */
 ```
-Check if Document Exists
+
+**Check if Document Exists**
 ```js
 accounts.has(document => document.email === "fir4tozden@gmail.com");
 // or
 accounts.has({"email": "fir4tozden@gmail.com"});
 // true
 ```
-Update a Document
+
+**Update a Document**
 ```js
 let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
 accounts.update(document._id, {"email": "fir4tozden@gmail.com", "username": "hey_im_fir4tozden", "password": "87654321", "region": "İstanbul"});
@@ -175,7 +178,8 @@ accounts.update(document._id, {"email": "fir4tozden@gmail.com", "username": "hey
   }
 */
 ```
-Delete a Document
+
+**Delete a Document**
 ```js
 let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
 accounts.delete(document._id);
@@ -183,7 +187,7 @@ accounts.delete(document._id);
 ```
 
 ### Examples for Key-Value Based Collections
-Set a Data
+**Set a Data**
 ```js
 user_settings.set("USER_1", {
   "friends": [
@@ -226,7 +230,8 @@ user_settings.set("USER_1.direct_messages", false);
   }
 */
 ```
-Get a Data
+
+**Get a Data**
 ```js
 user_settings.get("USER_1");
 /*
@@ -249,7 +254,8 @@ user_settings.get("USER_1");
 */
 user_settings.get("USER_1.direct_messages"); // -> false
 ```
-Push a Data to Array
+
+**Push a Data to Array**
 ```js
 user_settings.push("USER_1.hobbies", "Watching TV");
 /*
@@ -275,7 +281,8 @@ user_settings.push("USER_1.hobbies", "Reading Book");
   }
 */
 ```
-Remove a Data from Array
+
+**Remove a Data from Array**
 ```js
 user_settings.remove("USER_1.hobbies", "Watching TV");
 /*
@@ -290,13 +297,15 @@ user_settings.remove("USER_1.hobbies", "Watching TV");
   }
 */
 ```
-Find Data from Array
+
+**Find Data from Array**
 ```js
 user_settings.find("USER_1.friends", value => value.name === "Nehir"); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
 // or
 user_settings.find("USER_1.friends", {"name": "Nehir"}); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
 ```
-Filter Data from Array
+
+**Filter Data from Array**
 ```js
 user_settings.filter("USER_1.friends", value => value.region === "Muğla");
 // or
@@ -316,12 +325,14 @@ user_settings.filter("USER_1.friends", {"region": "Muğla"});
   ]
 */
 ```
-Check if Data Exists
+
+**Check if Data Exists**
 ```js
 user_settings.has("USER_1.hobbies"); // -> true
 user_settings.has("USER_1.hobbies", "Watching TV"); // -> false
 ```
-Increase Number
+
+**Increase Number**
 ```js
 user_settings.increase("USER_1.age", 15);
 /*
@@ -344,7 +355,8 @@ user_settings.increase("USER_1.age", 1);
   }
 */
 ```
-Reduce Number
+
+**Reduce Number**
 ```js
 user_settings.reduce("USER_1.age", 5);
 /*
@@ -357,7 +369,8 @@ user_settings.reduce("USER_1.age", 5);
   }
 */
 ```
-Delete a Data
+
+**Delete a Data**
 ```js
 user_settings.delete("USER_1.direct_messages");
 /*
