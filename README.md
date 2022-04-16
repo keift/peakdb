@@ -186,18 +186,7 @@ const user_settings = new PeakDB.Collection({"name": "USER_SETTINGS", "type": "K
 
 // Set a Data
 user_settings.set("USER_1", {
-  "friends": [
-    {
-      "id": "USER_2",
-      "name": "Nehir",
-      "region": "İstanbul"
-    },
-    {
-      "id": "USER_3",
-      "name": "Nehir",
-      "region": "İstanbul"
-    }
-  ],
+  "friends": [{"id": "USER_2", "name": "Nehir", "region": "İstanbul"}, {"id": "USER_3", "name": "Deniz", "region": "İstanbul"}],
   "friend_requests": true
 });
 /*
