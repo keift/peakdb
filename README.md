@@ -211,7 +211,7 @@ user_settings.set("USER_1.direct_messages", false);
   {
     "friends": [ ... ],
     "friend_requests": true,
-    "direct_messages": false
+    "direct_messages": false 👈
   }
 */
 ```
@@ -247,7 +247,7 @@ user_settings.push("USER_1.hobbies", "Watching TV");
     "friend_requests": true,
     "direct_messages": false,
     "hobbies": [
-      "Watching TV"
+      "Watching TV" 👈
     ]
   }
 */
@@ -259,7 +259,7 @@ user_settings.push("USER_1.hobbies", "Reading Book");
     "direct_messages": false,
     "hobbies": [
       "Watching TV",
-      "Reading Book"
+      "Reading Book" 👈
     ]
   }
 */
@@ -274,6 +274,7 @@ user_settings.remove("USER_1.hobbies", "Watching TV");
     "direct_messages": false,
     "hobbies": [
       "Reading Book"
+                     👈
     ]
   }
 */
@@ -294,12 +295,12 @@ user_settings.filter("USER_1.friends", {"region": "Muğla"});
     {
       "id": "USER_2",
       "name": "Nehir",
-      "region": "Muğla"
+      "region": "Muğla" 👈
     },
     {
       "id": "USER_3",
       "name": "Deniz",
-      "region": "Muğla"
+      "region": "Muğla" 👈
     }
   ]
 */
@@ -317,10 +318,8 @@ user_settings.increase("USER_1.age", 15);
     "friends": [ ... ],
     "friend_requests": true,
     "direct_messages": false,
-    "hobbies": [
-      "Reading Book"
-    ],
-    "age": 15
+    "hobbies": [ ... ],
+    "age": 15 👈
   }
 */
 user_settings.increase("USER_1.age", 1);
@@ -330,7 +329,7 @@ user_settings.increase("USER_1.age", 1);
     "friend_requests": true,
     "direct_messages": false,
     "hobbies": [ ... ],
-    "age": 16
+    "age": 16 👈
   }
 */
 ```
@@ -343,7 +342,7 @@ user_settings.reduce("USER_1.age", 5);
     "friend_requests": true,
     "direct_messages": false,
     "hobbies": [ ... ],
-    "age": 11
+    "age": 11 👈
   }
 */
 ```
@@ -354,6 +353,7 @@ user_settings.delete("USER_1.direct_messages");
   {
     "friends": [ ... ],
     "friend_requests": true,
+                             👈
     "hobbies": [ ... ],
     "age": 11
   }
