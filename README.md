@@ -214,7 +214,8 @@ user_settings.set("USER_1.direct_messages", false);
     "direct_messages": false
   }
 */
-
+```
+```
 // Get a Data
 user_settings.get("USER_1");
 /*
@@ -261,7 +262,8 @@ user_settings.push("USER_1.hobbies", "Reading Book");
     ]
   }
 */
-
+```
+```
 // Remove a Data from Array
 user_settings.remove("USER_1.hobbies", "Watching TV");
 /*
@@ -274,12 +276,14 @@ user_settings.remove("USER_1.hobbies", "Watching TV");
     ]
   }
 */
-
+```
+```
 // Find Value from Array
 user_settings.find("USER_1.friends", value => value.name === "Nehir"); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
 // or
 user_settings.find("USER_1.friends", {"name": "Nehir"}); // -> {"id": "USER_2", "name": "Nehir", "region": "Muğla"}
-
+```
+```
 // Filter Values from Array
 user_settings.filter("USER_1.friends", value => value.region === "Muğla");
 // or
@@ -298,18 +302,22 @@ user_settings.filter("USER_1.friends", {"region": "Muğla"});
     }
   ]
 */
-
+```
+```
 // Check if Data Exists
 user_settings.has("USER_1.hobbies"); // -> true
 user_settings.has("USER_1.hobbies", "Watching TV"); // -> false
-
+```
+```
 // Increase Number
 user_settings.increase("USER_1.age", 15); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 15}
 user_settings.increase("USER_1.age", 1); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 16}
-
+```
+```
 // Reduce Number
 user_settings.reduce("USER_1.age", 5); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"], "age": 11}
-
+```
+```
 // Delete a Data
 user_settings.delete("USER_1.direct_messages"); // -> {"friend_requests": true, "hobbies": ["Reading Book"], "age": 11}
 ```
