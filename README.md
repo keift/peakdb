@@ -186,7 +186,18 @@ accounts.delete(document._id);
 Set a Data
 ```js
 user_settings.set("USER_1", {
-  "friends": [{"id": "USER_2", "name": "Nehir", "region": "Muğla"}, {"id": "USER_3", "name": "Deniz", "region": "Muğla"}],
+  "friends": [
+    {
+      "id": "USER_2",
+      "name": "Nehir",
+      "region": "Muğla"
+    },
+    {
+      "id": "USER_3",
+      "name": "Deniz",
+      "region": "Muğla"
+    }
+  ],
   "friend_requests": true
 });
 /*
