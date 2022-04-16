@@ -22,6 +22,9 @@ Fast and advanced, document based and key-value based NoSQL database that able t
   * Automatically or manual backup
 
 ## Latest Updates
+### v2.1.0 → v2.2.0
+  * **`<KeyValueBasedCollection>.Find()` added.** You can find the data in array in key-value based collections.
+  * **`<KeyValueBasedCollection>.Filter()` added.** You can filter data in array in key-value based collections.
 ### v2.0.2 → v2.1.0
   * **`<Collection>.Has()` added.** You can check if a data exists. It can be used in both types of collections.
 ### v1.3.1 → v2.0.0
@@ -182,19 +185,160 @@ const PeakDB = require("peak.db");
 const user_settings = new PeakDB.Collection({"name": "USER_SETTINGS", "type": "KEY_VALUE_BASED", ...options});
 
 // Set a Data
-user_settings.set("USER_1", {"friend_requests": true}); // -> {"friend_requests": true}
-user_settings.set("USER_1.direct_messages", false); // -> {"friend_requests": true, "direct_messages": false}
+user_settings.set("USER_1", {"friends": [{"id": "USER_2", "name": "Nehir", "region": "İstanbul"}, {"id": "USER_3", "name": "Nehir", "region": "İstanbul"}], "friend_requests": true});
+/*
+  {
+    "friends": [
+      {
+        "id": "USER_2",
+        "name": "Nehir",
+        "region": "İstanbul"
+      },
+      {
+        "id": "USER_3",
+        "name": "Deniz",
+        "region": "İstanbul"
+      }
+    ],
+    "friend_requests": true
+  }
+*/
+user_settings.set("USER_1.direct_messages", false);
+/*
+  {
+    "friends": [
+      {
+        "id": "USER_2",
+        "name": "Nehir",
+        "region": "İstanbul"
+      },
+      {
+        "id": "USER_3",
+        "name": "Deniz",
+        "region": "İstanbul"
+      }
+    ],
+    "friend_requests": true,
+    "direct_messages": false
+  }
+*/
 
 // Get a Data
-user_settings.get("USER_1"); // -> {"friend_requests": true, "direct_messages": false}
+user_settings.get("USER_1");
+/*
+  {
+    "friends": [
+      {
+        "id": "USER_2",
+        "name": "Nehir",
+        "region": "İstanbul"
+      },
+      {
+        "id": "USER_3",
+        "name": "Deniz",
+        "region": "İstanbul"
+      }
+    ],
+    "friend_requests": true,
+    "direct_messages": false
+  }
+*/
 user_settings.get("USER_1.direct_messages"); // -> false
 
 // Push a Data to Array
-user_settings.push("USER_1.hobbies", "Watching TV"); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Watching TV"]}
-user_settings.push("USER_1.hobbies", "Reading Book"); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Watching TV", "Reading Book"]}
+user_settings.push("USER_1.hobbies", "Watching TV");
+/*
+  {
+    "friends": [
+      {
+        "id": "USER_2",
+        "name": "Nehir",
+        "region": "İstanbul"
+      },
+      {
+        "id": "USER_3",
+        "name": "Deniz",
+        "region": "İstanbul"
+      }
+    ],
+    "friend_requests": true,
+    "direct_messages": false,
+    "hobbies": [
+      "Watching TV"
+    ]
+  }
+*/
+user_settings.push("USER_1.hobbies", "Reading Book");
+/*
+  {
+    "friends": [
+      {
+        "id": "USER_2",
+        "name": "Nehir",
+        "region": "İstanbul"
+      },
+      {
+        "id": "USER_3",
+        "name": "Deniz",
+        "region": "İstanbul"
+      }
+    ],
+    "friend_requests": true,
+    "direct_messages": false,
+    "hobbies": [
+      "Watching TV",
+      "Reading Book"
+    ]
+  }
+*/
 
 // Remove a Data from Array
-user_settings.remove("USER_1.hobbies", "Watching TV"); // -> {"friend_requests": true, "direct_messages": false, "hobbies": ["Reading Book"]}
+user_settings.remove("USER_1.hobbies", "Watching TV");
+/*
+  {
+    "friends": [
+      {
+        "id": "USER_2",
+        "name": "Nehir",
+        "region": "İstanbul"
+      },
+      {
+        "id": "USER_3",
+        "name": "Deniz",
+        "region": "İstanbul"
+      }
+    ],
+    "friend_requests": true,
+    "direct_messages": false,
+    "hobbies": [
+      "Reading Book"
+    ]
+  }
+*/
+
+// Find Value from Array
+user_settings.find("USER_1.friends", value => value.name === "Nehir"); // -> {"id": "USER_2", "name": "Nehir", "region": "İstanbul"}
+// or
+user_settings.find("USER_1.friends", {"name": "Nehir"}); // -> {"id": "USER_2", "name": "Nehir", "region": "İstanbul"}
+
+// Filter Values from Array
+user_settings.filter("USER_1.friends", value => value.region === "İstanbul");
+// or
+user_settings.filter("USER_1.friends", {"region": "İstanbul"});
+/*
+  [
+    {
+      "id": "USER_2",
+      "name": "Nehir",
+      "region": "İstanbul"
+    },
+    {
+      "id": "USER_3",
+      "name": "Deniz",
+      "region": "İstanbul"
+    }
+  ]
+*/
 
 // Check if Data Exists
 user_settings.has("USER_1.hobbies"); // -> true
