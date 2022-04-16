@@ -23,23 +23,9 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 ## Latest Updates
 ### v2.1.0 → v2.2.0
-  * **`<Collection>.Find()` added.** You can find the data in array in key-value based collections.
-  * **`<Collection>.Filter()` added.** You can filter data in array in key-value based collections.
-### v2.0.2 → v2.1.0
-  * **`<Collection>.Has()` added.** You can check if a data exists. It can be used in both types of collections.
-### v1.3.1 → v2.0.0
-  * **Added new collection type.** You can now use your data on key-value based. Thanks to the newly added key-value based collection type, you do not have to keep your data in a document based format.
-  * **Added find and filter with JSON.** In your document based collection, you can also use JSON for find and filter operations instead of functions. You can find more information in document based collection examples.
-  * **Data read and write optimized.** Your data has been rendered faster and unnecessary RAM loss has been prevented.
-  * **`CollectionOptions.Type` added.** This allows you to specify type of your collection. Valid values: `DOCUMENT_BASED` and `KEY_VALUE_BASED`
-  * **`CollectionOptions.Activate_Destroy_Function` added.** If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command.
-  * **`<Collection>.Set()` added.** This allows you to set a data to your key-value based collection.
-  * **`<Collection>.Get()` added.** This allows you to get a data into your key-value based collection.
-  * **`<Collection>.Push()` added.** This allows you to push a data to Array in your key-value based collection.
-  * **`<Collection>.Remove()` added.** This allows you to remove a data from Array in your key-value based collection.
-  * **`<Collection>.Increase()` added.** This allows you to increase number in your key-value based collection.
-  * **`<Collection>.Reduce()` added.** This allows you to reduce number in your key-value based collection.
-  * **`<Collection>.Destroy()` added.** This serves to completely destroy the data in your collection. You need to activate it with the `activate_destroy_function` option.
+  * Key-Value Based Collection Updates:
+  * * **`<Collection>.Find()` added.** You can find the data in array in key-value based collections.
+  * * **`<Collection>.Filter()` added.** You can filter data in array in key-value based collections.
 
 [*... see all*](CHANGELOG.md#change-log)
 
