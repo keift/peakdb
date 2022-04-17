@@ -127,9 +127,7 @@ Create a collection where you can manage and host your data.
 
 ### Methods
 
-**For Document Based Collections**
-
-`insert(data)`
+`insert(data)` *(document based)*
 
 Insert a document.
 
@@ -159,7 +157,7 @@ Insert a document.
 
 <br/>
 
-`find(params, options)`
+`find(params, options)` *(document based)*
 
 Find a document.
 
@@ -193,7 +191,7 @@ Find a document.
 
 <br/>
 
-`filter(params, options)`
+`filter(params, options)` *(document based)*
 
 Filter documents.
 
@@ -240,7 +238,7 @@ Filter documents.
 
 <br/>
 
-`has(params)`
+`has(params)` *(document based)*
 
 Check if they have document.
 
@@ -285,7 +283,7 @@ Check if they have document.
 
 <br/>
 
-`update(document_id, data)`
+`update(document_id, data)` *(document based)*
 
 Update a document.
 
@@ -319,7 +317,7 @@ Update a document.
 
 <br/>
 
-`archive(document_id)`
+`archive(document_id)` *(document based)*
 
 Archive a document.
 
@@ -338,7 +336,7 @@ Archive a document.
 
 <br/>
 
-`unarchive(document_id)`
+`unarchive(document_id)` *(document based)*
 
 Unarchive a document.
 
@@ -357,7 +355,7 @@ Unarchive a document.
 
 <br/>
 
-`delete(document_id)`
+`delete(document_id)` *(document based)*
 
 Delete a document.
 
@@ -374,7 +372,7 @@ Delete a document.
 > // true
 > ```
 
-**For Key-Value Based Collections**
+<br/>
 
 `set(key, value)` *(key-value based)*
 
