@@ -35,6 +35,14 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 ### v2.1.0 → v2.2.0
 
+>  * Updates for System:
+>    * **`<CollectionOptions>.Indicate_Archived_At` added.** If this is active, will be automatically specified date when documents are archived.
+>    * **`<CollectionOptions>.Indicate_Archived_Timestamp` added.** If this is active, will be automatically specified timestamp when documents are archived.
+>    * **`<CollectionOptions>.Indicate_Unarchived_At` added.** If this is active, will be automatically specified date when documents are unarchived.
+>    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp` added.** If this is active, will be automatically specified timestamp when documents are unarchived.
+>  * Updates for Document Based Collections:
+>    * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
+>    * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
 >  * Updates for Key-Value Based Collections:
 >    * **`<Collection>.Find()` added.** You can find the data in the array.
 >    * **`<Collection>.Filter()` added.** You can filter the data in the array.
@@ -326,7 +334,7 @@ Archive a document.
 
 `unarchive(document_id)`
 
-Archive a document.
+Unarchive a document.
 
 > | Parameter | Description |
 > | --- | --- |
