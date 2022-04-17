@@ -21,6 +21,8 @@
   * [Latest Updates](#latest-updates)
   * [Installation](#installation)
   * [Documentation](#documentation)
+    * [Constructor](#constructor)
+    * [Methods](#methods)
 
 ## About
 
