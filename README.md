@@ -52,6 +52,9 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 ### Constructor
 
 `new Collection(options)`
+
+Create a collection where you can manage and host your data.
+
 > | Parameter | Default | Description |
 > | --- | --- | --- |
 > | options | | [Object]<br/>Collection options. |
@@ -82,9 +85,9 @@ Insert a document.
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
-> 
+>
 > returns [Object]
-> 
+>
 > Example:
 > ```js
 > accounts.insert({"email": "fir4tozden@gmail.com", "username": "fir4tozden", "password": "12345678", "region": "Muğla"});
@@ -111,9 +114,9 @@ Find a document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
-> 
+>
 > returns [Object]
-> 
+>
 > Example:
 > ```js
 > accounts.find(document => document.email === "fir4tozden@gmail.com");
@@ -142,9 +145,9 @@ Filter documents.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
-> 
+>
 > returns [Object]
-> 
+>
 > Example:
 > ```js
 > accounts.filter(document => document.region === "Muğla");
@@ -185,9 +188,9 @@ Check if they have document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
-> 
+>
 > returns [Object]
-> 
+>
 > Example:
 > ```js
 > accounts.filter(document => document.region === "Muğla");
@@ -216,6 +219,39 @@ Check if they have document.
 >       "region": "Muğla"
 >     }
 >   ]
+> */
+> ```
+
+<br/>
+
+`update(document_id, data)`
+
+Update a document.
+
+> | Parameter | Description |
+> | --- | --- |
+> | document_id | [String]<br/>The ID of the document to be updated. |
+> | data | [Object]<br/>Data to be updated in the document. |
+>
+> returns [Object]
+>
+> Example:
+> ```js
+> let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
+> accounts.update(document._id, {"email": "fir4tozden@gmail.com", "username": "hey_im_fir4tozden", "password": "87654321", "region": "İstanbul"});
+> /*
+>   {
+>     "_id: "23ERK9fHqiH_n83fhzU7eOYtzz6tUl7S",
+>     "_updated": true,
+>     "_created_at": 2022-03-20T00:00:00.000Z,
+>     "_created_timestamp": 1647745200000,
+>     "_updated_at": 2022-03-20T00:10:00.000Z,
+>     "_updated_timestamp": 1647735000000,
+>     "email": "fir4tozden@gmail.com",
+>     "username": "hey_im_fir4tozden",
+>     "password": "87654321",
+>     "region": "İstanbul"
+>   }
 > */
 > ```
 
