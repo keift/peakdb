@@ -355,9 +355,9 @@ Set a value.
 > | Parameter | Description |
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
-> | value | [String] \| [Number] \| [Object]<br/>Your data to set. |
+> | value | [String] \| [Number] \| [Object] \| [Array]<br/>Your data to set. |
 > 
-> returns [String] | [Number] | [Object] | [Array] | [Object]<[Array]> | [Array]<[String] | [Number] | [Object] | [Array]>
+> returns [String] | [Number] | [Object] | [Array]
 > 
 > Example:
 > ```js
@@ -379,7 +379,7 @@ Get a value.
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
 > 
-> returns [String] | [Number] | [Object] | [Array] | [Object]<[Array]> | [Array]<[String] | [Number] | [Object] | [Array]>
+> returns [String] | [Number] | [Object] | [Array]
 > 
 > Example:
 > ```js
@@ -395,9 +395,9 @@ Push a data to array.
 > | Parameter | Description |
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
-> | data | [String] \| [Number] \| [Object]<br/>Data to be push to the array. |
+> | data | [String] \| [Number] \| [Object] \| [Array]<br/>Data to be push to the array. |
 > 
-> returns [Array]<[String] | [Number] | [Object] | [Array]>
+> returns [Array]
 > 
 > Example:
 > ```js
@@ -418,9 +418,9 @@ Remove a data from array.
 > | Parameter | Description |
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
-> | data | [String] \| [Number] \| [Object]<br/>Data to be remove from the array. |
+> | data | [String] \| [Number] \| [Object] \| [Array]<br/>Data to be remove from the array. |
 > 
-> returns [Array]<[String] | [Number] | [Object] | [Array]>
+> returns [Array]
 > 
 > Example:
 > ```js
@@ -467,7 +467,7 @@ Filter data from array.
 > | key | [String] \| [Number]<br/>Key to value. |
 > | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
 > 
-> returns [Array]<[String] | [Number] | [Object] | [Array]>
+> returns [Array]
 > 
 > Example:
 > ```js
@@ -492,7 +492,7 @@ Filter data from array.
 
 `has(key, data)` *(key-value based)*
 
-Filter data from array.
+Check if they have key or data.
 
 > | Parameter | Description |
 > | --- | --- |
