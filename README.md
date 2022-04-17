@@ -256,7 +256,7 @@ Check if they have document.
 > 
 > Example:
 > ```js
-> accounts.has(document => document.region === "Muğla");
+> accounts.has(document => document.region === "Muğla"); // -> true
 > // or
 > accounts.has({"region": "Muğla"}); // -> true
 > ```
