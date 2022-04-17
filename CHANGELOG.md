@@ -1,8 +1,8 @@
 # Change Log
 ## v2.1.0 → v2.2.0
   * Updates for Key-Value Based Collections:
-    * **`<Collection>.Find()` added.** You can find the data in array from your collection.
-    * **`<Collection>.Filter()` added.** You can filter data in array from your collection.
+    * **`<Collection>.Find()` added.** You can find the data in the array.
+    * **`<Collection>.Filter()` added.** You can filter the data in the array.
 ## v2.0.2 → v2.1.0
   * Updates for All Collections:
     * **`<Collection>.Has()` added.** You can check if a data exists.
