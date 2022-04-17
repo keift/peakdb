@@ -159,7 +159,7 @@ Insert a document.
 
 <br/>
 
-`find(params)`
+`find(params, options)`
 
 Find a document.
 
@@ -193,7 +193,7 @@ Find a document.
 
 <br/>
 
-`filter(params)`
+`filter(params, options)`
 
 Filter documents.
 
@@ -374,11 +374,7 @@ Delete a document.
 > // true
 > ```
 
-<br/>
-
 **For Key-Value Based Collections**
-
-<br/>
 
 `set(key, value)`
 
