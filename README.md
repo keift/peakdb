@@ -35,18 +35,18 @@ npm install peak.db
 ```
 
 ## Documentation
-# Constructor
+### Constructor
 `new <PeakDB>.Collection(options)`
 | Parameter | Default | Description |
 | --- | --- | --- |
 | options | | [Object]\nCollection options.
-| options.name | | [String]\nName of collection.
-| options.type | | [String]\n[IMPORTANT] Type of the collection, which cannot be changed again later.\n\nValid values: `DOCUMENT_BASED`, `KEY_VALUE_BASED`
-| options.id_length | 32 | [Number] [DOCUMENT BASED COLLECTIONS]\nThis determines the length of unique identities given to documents.
-| options.indicate_created_at | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the creation date of documents.
-| options.indicate_created_timestamp | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the creation timestamp of documents.
-| options.indicate_edited_at | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the edited date of documents.
-| options.indicate_edited_timestamp | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the edited timestamp of documents.
+| options.name | | [String]<br/>Name of collection.
+| options.type | | [String]<br/>[IMPORTANT] Type of the collection, which cannot be changed again later.<br/><br/>Valid values: `DOCUMENT_BASED`, `KEY_VALUE_BASED`
+| options.id_length | 32 | [Number] [DOCUMENT BASED COLLECTIONS]<br/>This determines the length of unique identities given to documents.
+| options.indicate_created_at | false | [Boolean] [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the creation date of documents.
+| options.indicate_created_timestamp | false | [Boolean] [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the creation timestamp of documents.
+| options.indicate_edited_at | false | [Boolean] [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the edited date of documents.
+| options.indicate_edited_timestamp | false | [Boolean] [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the edited timestamp of documents.
 
 ## License
 [MIT](LICENSE.md)
