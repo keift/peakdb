@@ -356,7 +356,7 @@ Set a value.
 > | key | [String] \| [Number]<br/>Key to value. |
 > | value | [String] \| [Number] \| [Object]<br/>Your data to set. |
 > 
-> returns [String] [Number] [Object] [Array] [Object]<[Array]> [Array]<[String] | [Number] | [Object] | [Array]>
+> returns [String] | [Number] | [Object] | [Array] | [Object]<[Array]> | [Array]<[String] | [Number] | [Object] | [Array]>
 > 
 > Example:
 > ```js
@@ -378,7 +378,7 @@ Get a value.
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
 > 
-> returns [String] [Number] [Object] [Array] [Object]<[Array]> [Array]<[String] | [Number] | [Object] | [Array]>
+> returns [String] | [Number] | [Object] | [Array] | [Object]<[Array]> | [Array]<[String] | [Number] | [Object] | [Array]>
 > 
 > Example:
 > ```js
