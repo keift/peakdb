@@ -7,6 +7,13 @@
   <img src="https://badgen.net/npm/dt/peak.db"/>
 </div>
 
+## Contents
+  * [About](#about)
+  * [Features](#features)
+  * [Latest Updates](#latest-updates)
+  * [Installation](#installation)
+  * [Documentation](#documentation)
+
 ## About
 Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.
 
