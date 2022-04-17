@@ -380,16 +380,45 @@ Set a value.
 
 > | Parameter | Description |
 > | --- | --- |
-> | key | [String] | [Number]<br/>Key to value. |
-> | value | [String] |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | value | [String] \| [Number] \| [Object]<br/>Your data to set. |
 >
-> returns [Boolean]
+> returns [Object]
 >
 > Example:
 > ```js
-> let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
-> accounts.delete(document._id);
-> // true
+> user_settings.set("USER_1", {
+>   "friends": [
+>     {
+>       "id": "USER_2",
+>       "name": "Nehir",
+>       "region": "Muğla"
+>     },
+>     {
+>       "id": "USER_3",
+>       "name": "Deniz",
+>       "region": "Muğla"
+>     }
+>   ],
+>   "friend_requests": true
+> });
+> /*
+>   {
+>     "friends": [
+>       {
+>         "id": "USER_2",
+>         "name": "Nehir",
+>         "region": "Muğla"
+>       },
+>       {
+>         "id": "USER_3",
+>         "name": "Deniz",
+>         "region": "Muğla"
+>       }
+>     ],
+>     "friend_requests": true
+>   }
+> */
 > ```
 
 
