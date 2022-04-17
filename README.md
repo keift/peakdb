@@ -99,6 +99,8 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 > */
 > ```
 
+<br/>
+
 `find(params)`
 > | Parameter | Description |
 > | --- | --- |
