@@ -1,6 +1,7 @@
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+[Array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 [Boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 
@@ -201,7 +202,7 @@ Filter documents.
 > | options | [Object] (optional)<br/>Filter options. |
 > | options.cares_archived | [Boolean] (optional)<br/>Whether to filter archived documents. |
 > 
-> returns [Object]
+> returns [Array]<[Object]>
 > 
 > Example:
 > ```js
@@ -238,47 +239,22 @@ Filter documents.
 
 <br/>
 
-`has(params)` *(document based)*
+`has(params, options)` *(document based)*
 
 Check if they have document.
 
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
+> | options.cares_archived | [Boolean] (optional)<br/>Whether to filter archived documents. |
 > 
-> returns [Object]
+> returns [Boolean]
 > 
 > Example:
 > ```js
-> accounts.filter(document => document.region === "Muğla");
+> accounts.has(document => document.region === "Muğla");
 > // or
-> accounts.filter({"region": "Muğla"});
-> /*
->   [
->     {
->       "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
->       "_updated": false,
->       "_archived": false,
->       "_created_at": 2022-03-20T00:00:00.000Z,
->       "_created_timestamp": 1647745200000,
->       "email": "fir4tozden@gmail.com",
->       "username": "fir4tozden",
->       "password": "12345678",
->       "region": "Muğla"
->     },
->     {
->       "_id": "23ERK9fHqiH_n83fhzU7eOYtzz6tUl7S",
->       "_updated": false,
->       "_archived": false,
->       "_created_at": 2022-03-20T00:05:00.000Z,
->       "_created_timestamp": 1647734700000,
->       "email": "nehir@gmail.com",
->       "username": "nehir",
->       "password": "12345678",
->       "region": "Muğla"
->     }
->   ]
-> */
+> accounts.has({"region": "Muğla"}); // -> true
 > ```
 
 <br/>
@@ -330,8 +306,7 @@ Archive a document.
 > Example:
 > ```js
 > let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
-> accounts.archive(document._id);
-> // true
+> accounts.archive(document._id); // -> true
 > ```
 
 <br/>
@@ -349,8 +324,7 @@ Unarchive a document.
 > Example:
 > ```js
 > let document = accounts.find(document => document.email === "fir4tozden@gmail.com", {"cares_archived": true});
-> accounts.unarchive(document._id);
-> // true
+> accounts.unarchive(document._id); // -> true
 > ```
 
 <br/>
@@ -368,8 +342,7 @@ Delete a document.
 > Example:
 > ```js
 > let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
-> accounts.delete(document._id);
-> // true
+> accounts.delete(document._id); // -> true
 > ```
 
 <br/>
@@ -382,12 +355,12 @@ Set a value.
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
 > | value | [String] \| [Number] \| [Object]<br/>Your data to set. |
->
-> returns [Object]
->
+> 
+> returns [String] [Number] [Object] [Array] [Object]<[Array]> [Array]<[String] | [Number] | [Object] | [Array]>
+> 
 > Example:
 > ```js
-> user_settings.set("USER_1", {"friend_requests": true});
+> users_settings.set("USER_1", {"friend_requests": true});
 > /*
 >   {
 >     "friend_requests": true
@@ -395,6 +368,197 @@ Set a value.
 > */
 > ```
 
+<br/>
+
+`get(key)` *(key-value based)*
+
+Get a value.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> 
+> returns [String] [Number] [Object] [Array] [Object]<[Array]> [Array]<[String] | [Number] | [Object] | [Array]>
+> 
+> Example:
+> ```js
+> users_settings.get("USER_1.friend_requests"); // -> true
+> ```
+
+<br/>
+
+`push(key, data)` *(key-value based)*
+
+Push a data to array.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | data | [String] \| [Number] \| [Object]<br/>Data to be push to the array. |
+> 
+> returns [Array]<[String] | [Number] | [Object] | [Array]>
+> 
+> Example:
+> ```js
+> users_settings.get("USER_1.friends", "USER_2");
+> /*
+>   [
+>     "USER_2",
+>   ]
+> */
+> ```
+
+<br/>
+
+`remove(key, data)` *(key-value based)*
+
+Remove a data from array.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | data | [String] \| [Number] \| [Object]<br/>Data to be remove from the array. |
+> 
+> returns [Array]<[String] | [Number] | [Object] | [Array]>
+> 
+> Example:
+> ```js
+> users_settings.remove("USER_1.friends", "USER_2");
+> /*
+>   []
+> */
+> ```
+
+<br/>
+
+`find(key, params)` *(key-value based)*
+
+Find a data from array.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
+> 
+> returns [Object]
+> 
+> Example:
+> ```js
+> users_settings.find("USER_1.social_media_addresses", data => data.platform === "Instagram");
+> // or
+> users_settings.find("USER_1.social_media_addresses", {"platform": "Instagram"});
+> /*
+>   {
+>     "platform": "Instagram",
+>     "username": "fir4tozden"
+>   }
+> */
+> ```
+
+<br/>
+
+`filter(key, params)` *(key-value based)*
+
+Filter data from array.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
+> 
+> returns [Array]<[String] | [Number] | [Object] | [Array]>
+> 
+> Example:
+> ```js
+> users_settings.filter("USER_1.social_media_addresses", data => data.username === "fir4tozden");
+> // or
+> users_settings.filter("USER_1.social_media_addresses", {"username": "fir4tozden"});
+> /*
+>   [
+>     {
+>       "platform": "Instagram",
+>       "username": "fir4tozden"
+>     },
+>     {
+>       "platform": "Twitter",
+>       "username": "fir4tozden"
+>     }
+>   ]
+> */
+> ```
+
+<br/>
+
+`has(key, data)` *(key-value based)*
+
+Filter data from array.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | data | [String] \| [Object] (optional)<br/>The data for in array. |
+> 
+> returns [Boolean]
+> 
+> Example:
+> ```js
+> users_settings.has("USER_1.hobbies"); // -> true
+> users_settings.has("USER_1.hobbies", "Watching TV"); // -> false
+> ```
+
+<br/>
+
+`increase(key, value)` *(key-value based)*
+
+Increase the number in the value.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | value | [Number]<br/>The number to be incremented. |
+> 
+> returns [Number]
+> 
+> Example:
+> ```js
+> user_settings.increase("USER_1.age", 15); // -> 15
+> user_settings.increase("USER_1.age", 1); // -> 16
+> ```
+
+<br/>
+
+`reduce(key, value)` *(key-value based)*
+
+Reduce the number in the value.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> | value | [Number]<br/>The number to decrease. |
+> 
+> returns [Number]
+> 
+> Example:
+> ```js
+> users_settings.reduce("USER_1.age", 5); // -> 11
+> ```
+
+<br/>
+
+`delete(key)` *(key-value based)*
+
+Reduce the number in the value.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] \| [Number]<br/>Key to value. |
+> 
+> returns [Number]
+> 
+> Example:
+> ```js
+> users_settings.delete("USER_1.age"); // -> true
+> ```
 
 ## License
 
