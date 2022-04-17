@@ -23,9 +23,9 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 ## Latest Updates
 ### v2.1.0 → v2.2.0
-  * Key-Value Based Collection Updates:
-    * **`<Collection>.Find()` added.** You can find the data in array in key-value based collections.
-    * **`<Collection>.Filter()` added.** You can filter data in array in key-value based collections.
+  * Updates for Key-Value Based Collections:
+    * **`<Collection>.Find()` added.** You can find the data in array from your collection.
+    * **`<Collection>.Filter()` added.** You can filter data in array from your collection.
 
 [*... see all*](CHANGELOG.md#change-log)
 
