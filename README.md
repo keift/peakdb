@@ -39,7 +39,7 @@ npm install peak.db
 `new <PeakDB>.Collection(options)`
 | Parameter | Default | Description |
 | --- | --- | --- |
-| options | | [Object]\nCollection options.
+| options | | [Object]<br/>Collection options.
 | options.name | | [String]<br/>Name of collection.
 | options.type | | [String]<br/>[IMPORTANT] Type of the collection, which cannot be changed again later.<br/><br/>Valid values: `DOCUMENT_BASED`, `KEY_VALUE_BASED`
 | options.id_length | 32 | [Number] [DOCUMENT BASED COLLECTIONS]<br/>This determines the length of unique identities given to documents.
