@@ -374,9 +374,9 @@ Delete a document.
 > // true
 > ```
 
+<br/>
+
 **For Key-Value Based Collections**
-
-
 
 <br/>
 
