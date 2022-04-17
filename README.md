@@ -8,6 +8,7 @@
 </div>
 
 ## Contents
+
   * [About](#about)
   * [Features](#features)
   * [Latest Updates](#latest-updates)
@@ -15,9 +16,11 @@
   * [Documentation](#documentation)
 
 ## About
+
 Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.
 
 ## Features
+
   * NoSQL database
   * Can be run as it is installed
   * Can be used document based and key-value based
@@ -29,7 +32,9 @@ Fast and advanced, document based and key-value based NoSQL database that able t
   * Automatically or manual backup
 
 ## Latest Updates
+
 ### v2.1.0 → v2.2.0
+
   * Updates for Key-Value Based Collections:
     * **`<Collection>.Find()` added.** You can find the data in the array.
     * **`<Collection>.Filter()` added.** You can filter the data in the array.
@@ -37,12 +42,15 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 [*... see all*](CHANGELOG.md#change-log)
 
 ## Installation
+
 ```sh-session
 npm install peak.db
 ```
 
 ## Documentation
+
 ### Constructor
+
 `new Collection(options)`
 > | Parameter | Default | Description |
 > | --- | --- | --- |
@@ -65,12 +73,14 @@ npm install peak.db
 
 ### Methods
 **For Document Based Collections**
+
 `insert(data)`
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
 
 ## License
+
 [MIT](LICENSE.md)
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
