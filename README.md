@@ -76,7 +76,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 **For Document Based Collections**
 
 `insert(data)`
-> Insert a document.
+Insert a document.
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
@@ -103,7 +103,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 <br/>
 
 `find(params)`
-> Find a document.
+Find a document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
@@ -132,7 +132,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 <br/>
 
 `filter(params)`
-> Filter documents.
+Filter documents.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
@@ -173,7 +173,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 <br/>
 
 `has(params)`
-> Check if they have document.
+Check if they have document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
