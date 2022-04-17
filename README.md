@@ -387,35 +387,9 @@ Set a value.
 >
 > Example:
 > ```js
-> user_settings.set("USER_1", {
->   "friends": [
->     {
->       "id": "USER_2",
->       "name": "Nehir",
->       "region": "Muğla"
->     },
->     {
->       "id": "USER_3",
->       "name": "Deniz",
->       "region": "Muğla"
->     }
->   ],
->   "friend_requests": true
-> });
+> user_settings.set("USER_1", {"friend_requests": true});
 > /*
 >   {
->     "friends": [
->       {
->         "id": "USER_2",
->         "name": "Nehir",
->         "region": "Muğla"
->       },
->       {
->         "id": "USER_3",
->         "name": "Deniz",
->         "region": "Muğla"
->       }
->     ],
 >     "friend_requests": true
 >   }
 > */
