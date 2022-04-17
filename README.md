@@ -73,12 +73,17 @@
 
 ### Methods
 
-***For Document Based Collections***
+> **For Document Based Collections**
 
 `insert(data)` 
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
+
+`find(params)`
+> | Parameter | Description |
+> | --- | --- |
+> | params | [Function] | [Object]<br/>The parameters you will use to find the data.
 
 ## License
 
@@ -88,3 +93,4 @@
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
 [Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
 [Boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+[Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
