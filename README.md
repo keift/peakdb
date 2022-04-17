@@ -79,13 +79,47 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
-
-<br/>
+> returns [Object]
+Example:
+```js
+accounts.insert({"email": "fir4tozden@gmail.com", "username": "fir4tozden", "password": "12345678", "region": "Muğla"});
+/*
+  {
+    "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
+    "_updated": false,
+    "_created_at": 2022-03-20T00:00:00.000Z,
+    "_created_timestamp": 1647745200000,
+    "email": "fir4tozden@gmail.com",
+    "username": "fir4tozden",
+    "password": "12345678",
+    "region": "Muğla"
+  }
+*/
+```
 
 `find(params)`
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
+> returns [Object]
+Example:
+```js
+accounts.find(document => document.email === "fir4tozden@gmail.com");
+// or
+accounts.find({"email": "fir4tozden@gmail.com"});
+/*
+  {
+    "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
+    "_updated": false,
+    "_created_at": 2022-03-20T00:00:00.000Z,
+    "_created_timestamp": 1647745200000,
+    "email": "fir4tozden@gmail.com",
+    "username": "fir4tozden",
+    "password": "12345678",
+    "region": "Muğla"
+  }
+*/
+```
 
 ## License
 
