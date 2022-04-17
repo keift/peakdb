@@ -8,38 +8,38 @@
 </div>
 
 ## Contents
->
->  * [About](#about)
->  * [Features](#features)
->  * [Latest Updates](#latest-updates)
->  * [Installation](#installation)
->  * [Documentation](#documentation)
+
+  * [About](#about)
+  * [Features](#features)
+  * [Latest Updates](#latest-updates)
+  * [Installation](#installation)
+  * [Documentation](#documentation)
 
 ## About
->
-> Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.
+
+Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.
 
 ## Features
 
->  * NoSQL database
->  * Can be run as it is installed
->  * Can be used document based and key-value based
->  * Customizable settings for collections
->  * No need to use schema
->  * Quick data reading and writing
->  * Data can be kept in cache
->  * Easy to find data
->  * Automatically or manual backup
+  * NoSQL database
+  * Can be run as it is installed
+  * Can be used document based and key-value based
+  * Customizable settings for collections
+  * No need to use schema
+  * Quick data reading and writing
+  * Data can be kept in cache
+  * Easy to find data
+  * Automatically or manual backup
 
 ## Latest Updates
 
-> ### v2.1.0 → v2.2.0
+### v2.1.0 → v2.2.0
 
 >  * Updates for Key-Value Based Collections:
 >    * **`<Collection>.Find()` added.** You can find the data in the array.
 >    * **`<Collection>.Filter()` added.** You can filter the data in the array.
->
-> [*... see all*](CHANGELOG.md#change-log)
+
+[*... see all*](CHANGELOG.md#change-log)
 
 ## Installation
 
