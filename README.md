@@ -75,7 +75,8 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 **For Document Based Collections**
 
-`insert(data)` 
+`insert(data)`
+> Insert a document.
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
@@ -102,6 +103,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 <br/>
 
 `find(params)`
+> Find a document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
@@ -130,9 +132,51 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 <br/>
 
 `filter(params)`
+> Filter documents.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
+> 
+> returns [Object]
+> 
+> Example:
+> ```js
+> accounts.filter(document => document.region === "Muğla");
+> // or
+> accounts.filter({"region": "Muğla"});
+> /*
+>   [
+>     {
+>       "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
+>       "_updated": false,
+>       "_created_at": 2022-03-20T00:00:00.000Z,
+>       "_created_timestamp": 1647745200000,
+>       "email": "fir4tozden@gmail.com",
+>       "username": "fir4tozden",
+>       "password": "12345678",
+>       "region": "Muğla"
+>     },
+>     {
+>       "_id": "23ERK9fHqiH_n83fhzU7eOYtzz6tUl7S",
+>       "_updated": false,
+>       "_created_at": 2022-03-20T00:05:00.000Z,
+>       "_created_timestamp": 1647734700000,
+>       "email": "nehir@gmail.com",
+>       "username": "nehir",
+>       "password": "12345678",
+>       "region": "Muğla"
+>     }
+>   ]
+> */
+> ```
+
+<br/>
+
+`has(params)`
+> Check if they have document.
+> | Parameter | Description |
+> | --- | --- |
+> | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
 > 
 > returns [Object]
 > 
