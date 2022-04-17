@@ -195,7 +195,7 @@ Filter documents.
 > ```js
 > accounts.filter(document => document.region === "Muğla", {"cares_archived": true});
 > // or
-> accounts.filter({"region": "Muğla"}, {"cares_archived": true);
+> accounts.filter({"region": "Muğla"}, {"cares_archived": true});
 > /*
 >   [
 >     {
@@ -301,6 +301,44 @@ Update a document.
 >     "region": "İstanbul"
 >   }
 > */
+> ```
+
+<br/>
+
+`archive(document_id)`
+
+Archive a document.
+
+> | Parameter | Description |
+> | --- | --- |
+> | document_id | [String]<br/>The ID of the document to be archived. |
+> 
+> returns [Boolean]
+> 
+> Example:
+> ```js
+> let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
+> accounts.archive(document._id);
+> // true
+> ```
+
+<br/>
+
+`unarchive(document_id)`
+
+Archive a document.
+
+> | Parameter | Description |
+> | --- | --- |
+> | document_id | [String]<br/>The ID of the document to be archived. |
+> 
+> returns [Boolean]
+> 
+> Example:
+> ```js
+> let document = accounts.find(document => document.email === "fir4tozden@gmail.com", {"cares_archived": true});
+> accounts.unarchive(document._id);
+> // true
 > ```
 
 <br/>
