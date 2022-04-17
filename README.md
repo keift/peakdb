@@ -39,9 +39,19 @@ npm install peak.db
 `new <PeakDB>.Collection(options)`
 | Parameter | Default | Description |
 | --- | --- | --- |
-| name | | [String]
+| options | | [Object]\nCollection options.
+| options.name | | [String]\nName of collection.
+| options.type | | [String]\n[IMPORTANT] Type of the collection, which cannot be changed again later.\n\nValid values: `DOCUMENT_BASED`, `KEY_VALUE_BASED`
+| options.id_length | 32 | [Number] [DOCUMENT BASED COLLECTIONS]\nThis determines the length of unique identities given to documents.
+| options.indicate_created_at | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the creation date of documents.
+| options.indicate_created_timestamp | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the creation timestamp of documents.
+| options.indicate_edited_at | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the edited date of documents.
+| options.indicate_edited_timestamp | false | [Boolean] [DOCUMENT BASED COLLECTIONS]\nWhether to specify the edited timestamp of documents.
 
 ## License
 [MIT](LICENSE.md)
 
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+[Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
+[Object]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+[Boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
