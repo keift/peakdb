@@ -79,7 +79,9 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
+> 
 > returns [Object]
+> 
 > Example:
 > ```js
 > accounts.insert({"email": "fir4tozden@gmail.com", "username": "fir4tozden", "password": "12345678", "region": "Muğla"});
@@ -101,7 +103,9 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
+> 
 > returns [Object]
+> 
 > Example:
 > ```js
 > accounts.find(document => document.email === "fir4tozden@gmail.com");
