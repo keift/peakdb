@@ -85,7 +85,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 `find(params)`
 > | Parameter | Description |
 > | --- | --- |
-> | params | [Function] | [Object]<br/>The parameters you will use to find the data. |
+> | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
 
 ## License
 
