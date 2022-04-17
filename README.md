@@ -68,7 +68,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 `new Collection(options)`
 
-Create a collection where you can manage and host your data.
+Create a collection where you can manage and store your data.
 
 > | Parameter | Default | Description |
 > | --- | --- | --- |
