@@ -376,7 +376,7 @@ Delete a document.
 
 **For Key-Value Based Collections**
 
-`set(key, value)`
+`set(key, value)` *(key-value based)*
 
 Set a value.
 
