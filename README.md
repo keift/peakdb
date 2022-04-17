@@ -62,7 +62,13 @@ npm install peak.db
 > | options.auto_backup | false | [Boolean] (optional)<br/>If this is active, this collection will receive automatic backups. |
 > | options.detailed_debugger_logs | false | [Boolean] (optional)<br/>If this is active, it will print more events in the collection to the console. |
 > | options.activate_destroy_function | false | [Boolean] (optional)<br/>[IMPORTANT] If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command. |
+
 ### Methods
+**For Document Based Collections**
+`insert(data)`
+> | Parameter | Description |
+> | --- | --- |
+> | data | [Object]<br/>The data to be written to the collection. |
 
 ## License
 [MIT](LICENSE.md)
