@@ -255,6 +255,50 @@ Update a document.
 > */
 > ```
 
+<br/>
+
+`delete(document_id)`
+
+Delete a document.
+
+> | Parameter | Description |
+> | --- | --- |
+> | document_id | [String]<br/>The ID of the document to be deleted. |
+>
+> returns [Boolean]
+>
+> Example:
+> ```js
+> let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
+> accounts.delete(document._id);
+> // true
+> ```
+
+**For Key-Value Based Collections**
+
+
+
+<br/>
+
+`set(key, value)`
+
+Set a value.
+
+> | Parameter | Description |
+> | --- | --- |
+> | key | [String] | [Number]<br/>Key to value. |
+> | value | [String] |
+>
+> returns [Boolean]
+>
+> Example:
+> ```js
+> let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
+> accounts.delete(document._id);
+> // true
+> ```
+
+
 ## License
 
 [MIT](LICENSE.md)
