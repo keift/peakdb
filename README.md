@@ -246,7 +246,8 @@ Check if they have document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
-> | options.cares_archived | [Boolean] (optional)<br/>Whether to filter archived documents. |
+> | options | [Object] (optional)<br/>Find options. |
+> | options.cares_archived | [Boolean] (optional)<br/>Whether to has archived documents. |
 > 
 > returns [Boolean]
 > 
