@@ -560,6 +560,32 @@ Reduce the number in the value.
 > users_settings.delete("USER_1.age"); // -> true
 > ```
 
+<br/>
+
+`backup()`
+
+Backup the collection.
+
+> returns [Boolean]
+> 
+> Example:
+> ```js
+> collection.backup(); // -> true
+> ```
+
+<br/>
+
+`destroy()`
+
+Destroy the collection.
+
+> returns [Boolean]
+> 
+> Example:
+> ```js
+> collection.destroy(); // -> true
+> ```
+
 ## License
 
 [MIT](LICENSE.md)
