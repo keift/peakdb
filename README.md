@@ -49,6 +49,7 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 >    * **`<CollectionOptions>.Indicate_Archived_Timestamp` added.** If this is active, will be automatically specified timestamp when documents are archived.
 >    * **`<CollectionOptions>.Indicate_Unarchived_At` added.** If this is active, will be automatically specified date when documents are unarchived.
 >    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp` added.** If this is active, will be automatically specified timestamp when documents are unarchived.
+>    * **Fixed caching system.** It was always working even with caching turned off, this has been fixed.
 >  * Updates for Document Based Collections:
 >    * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
 >    * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
