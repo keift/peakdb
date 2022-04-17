@@ -49,7 +49,7 @@ npm install peak.db
 
 ## Documentation
 
-### Constructor
+**Constructor**
 
 `new Collection(options)`
 > | Parameter | Default | Description |
@@ -71,8 +71,9 @@ npm install peak.db
 > | options.detailed_debugger_logs | false | [Boolean] (optional)<br/>If this is active, it will print more events in the collection to the console. |
 > | options.activate_destroy_function | false | [Boolean] (optional)<br/>[IMPORTANT] If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command. |
 
-### Methods
-**For Document Based Collections**
+### DocumentBasedCollection
+
+**Methods**
 
 `insert(data)`
 > | Parameter | Description |
