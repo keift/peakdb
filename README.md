@@ -65,6 +65,10 @@ Create a collection where you can manage and host your data.
 > | options.indicate_created_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the creation timestamp of documents. |
 > | options.indicate_edited_at | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the edited date of documents. |
 > | options.indicate_edited_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the edited timestamp of documents. |
+> | options.indicate_archived_at | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the archived at of documents. |
+> | options.indicate_archived_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the archived timestamp of documents. |
+> | options.indicate_unarchived_at | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the unarchived at of documents. |
+> | options.indicate_unarchived_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the unarchived timestamp of documents. |
 > | options.save_timeout | `1` | [Number] (optional)<br/>This specifies how many seconds after a document is inserted, the collection will be saved. This way it limits the successive saving of the collection when many data are inserted in succession, so the system is not slowed down. Data loss may occur if the system is turned off after repeatedly entering data. When the document is added 5 times in a row, the collection is saved so that the data does not remain unsaved for a long time. This can be edited with the 'save_directly_after' option. |
 > | options.save_directly_after | `5` | [Number] (optional)<br/>This specifies that after how many documents have been inserted, the collection will be saved without the save timeout. |
 > | options.cache_retention_time | `10` | [Number] (optional)<br/>[If this value is `-1`, the cache is kept indefinitely] This indicates how much the cache will be held if the caching is enabled. If there is no activity in the collection, the cache is deleted, this prevents the loss of unnecessary RAM. |
@@ -73,6 +77,39 @@ Create a collection where you can manage and host your data.
 > | options.auto_backup | `false` | [Boolean] (optional)<br/>If this is active, this collection will receive automatic backups. |
 > | options.detailed_debugger_logs | `false` | [Boolean] (optional)<br/>If this is active, it will print more events in the collection to the console. |
 > | options.activate_destroy_function | `false` | [Boolean] (optional)<br/>[IMPORTANT] If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command. |
+> 
+> Example:
+> ```js
+> const example_collection = new PeakDB.Collection({
+>   "name": "EXAMPLE_COLLECTION",
+>   "type": "DOCUMENT_BASED",
+>   
+>   /*
+>     For document based collections
+>   */
+>   "id_length": 32,
+>   "indicate_created_at": false,
+>   "indicate_created_timestamp": false,
+>   "indicate_updated_at": false,
+>   "indicate_updated_timestamp": false,
+>   "indicate_archived_at": false,
+>   "indicate_archived_timestamp": false,
+>   "indicate_unarchived_at": false,
+>   "indicate_unarchived_timestamp": false,
+>   
+>   /*
+>     Can be used on all collection types
+>   */
+>   "save_timeout": 1,
+>   "save_directly_after": 5,
+>   "cache_retention_time": 10,
+>   "backup_retention_time": 3,
+>   "caching": false,
+>   "auto_backup": false,
+>   "detailed_debugger_logs": false,
+>   "activate_destroy_function": false
+> });
+> ```
 
 ### Methods
 
@@ -85,9 +122,9 @@ Insert a document.
 > | Parameter | Description |
 > | --- | --- |
 > | data | [Object]<br/>The data to be written to the collection. |
->
+> 
 > returns [Object]
->
+> 
 > Example:
 > ```js
 > accounts.insert({"email": "fir4tozden@gmail.com", "username": "fir4tozden", "password": "12345678", "region": "Muğla"});
@@ -114,9 +151,9 @@ Find a document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
->
+> 
 > returns [Object]
->
+> 
 > Example:
 > ```js
 > accounts.find(document => document.email === "fir4tozden@gmail.com");
@@ -145,9 +182,9 @@ Filter documents.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
->
+> 
 > returns [Object]
->
+> 
 > Example:
 > ```js
 > accounts.filter(document => document.region === "Muğla");
@@ -188,9 +225,9 @@ Check if they have document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
->
+> 
 > returns [Object]
->
+> 
 > Example:
 > ```js
 > accounts.filter(document => document.region === "Muğla");
@@ -232,9 +269,9 @@ Update a document.
 > | --- | --- |
 > | document_id | [String]<br/>The ID of the document to be updated. |
 > | data | [Object]<br/>Data to be updated in the document. |
->
+> 
 > returns [Object]
->
+> 
 > Example:
 > ```js
 > let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
@@ -264,9 +301,9 @@ Delete a document.
 > | Parameter | Description |
 > | --- | --- |
 > | document_id | [String]<br/>The ID of the document to be deleted. |
->
+> 
 > returns [Boolean]
->
+> 
 > Example:
 > ```js
 > let document = accounts.find(document => document.email === "fir4tozden@gmail.com");
