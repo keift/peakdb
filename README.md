@@ -132,6 +132,7 @@ Insert a document.
 >   {
 >     "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
 >     "_updated": false,
+>     "_archived": false,
 >     "_created_at": 2022-03-20T00:00:00.000Z,
 >     "_created_timestamp": 1647745200000,
 >     "email": "fir4tozden@gmail.com",
@@ -151,18 +152,21 @@ Find a document.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
+> | options | [Object] (optional)<br/>Find options. |
+> | options.cares_archived | [Boolean] (optional)<br/>Whether to find archived documents. |
 > 
 > returns [Object]
 > 
 > Example:
 > ```js
-> accounts.find(document => document.email === "fir4tozden@gmail.com");
+> accounts.find(document => document.email === "fir4tozden@gmail.com", {"cares_archived": true});
 > // or
-> accounts.find({"email": "fir4tozden@gmail.com"});
+> accounts.find({"email": "fir4tozden@gmail.com"}, {"cares_archived": true});
 > /*
 >   {
 >     "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
 >     "_updated": false,
+>     "_archived": false,
 >     "_created_at": 2022-03-20T00:00:00.000Z,
 >     "_created_timestamp": 1647745200000,
 >     "email": "fir4tozden@gmail.com",
@@ -182,19 +186,22 @@ Filter documents.
 > | Parameter | Description |
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
+> | options | [Object] (optional)<br/>Filter options. |
+> | options.cares_archived | [Boolean] (optional)<br/>Whether to filter archived documents. |
 > 
 > returns [Object]
 > 
 > Example:
 > ```js
-> accounts.filter(document => document.region === "Muğla");
+> accounts.filter(document => document.region === "Muğla", {"cares_archived": true});
 > // or
-> accounts.filter({"region": "Muğla"});
+> accounts.filter({"region": "Muğla"}, {"cares_archived": true);
 > /*
 >   [
 >     {
 >       "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
 >       "_updated": false,
+>       "_archived": false,
 >       "_created_at": 2022-03-20T00:00:00.000Z,
 >       "_created_timestamp": 1647745200000,
 >       "email": "fir4tozden@gmail.com",
@@ -205,6 +212,7 @@ Filter documents.
 >     {
 >       "_id": "23ERK9fHqiH_n83fhzU7eOYtzz6tUl7S",
 >       "_updated": false,
+>       "_archived": false,
 >       "_created_at": 2022-03-20T00:05:00.000Z,
 >       "_created_timestamp": 1647734700000,
 >       "email": "nehir@gmail.com",
@@ -238,6 +246,7 @@ Check if they have document.
 >     {
 >       "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
 >       "_updated": false,
+>       "_archived": false,
 >       "_created_at": 2022-03-20T00:00:00.000Z,
 >       "_created_timestamp": 1647745200000,
 >       "email": "fir4tozden@gmail.com",
@@ -248,6 +257,7 @@ Check if they have document.
 >     {
 >       "_id": "23ERK9fHqiH_n83fhzU7eOYtzz6tUl7S",
 >       "_updated": false,
+>       "_archived": false,
 >       "_created_at": 2022-03-20T00:05:00.000Z,
 >       "_created_timestamp": 1647734700000,
 >       "email": "nehir@gmail.com",
@@ -280,6 +290,7 @@ Update a document.
 >   {
 >     "_id: "23ERK9fHqiH_n83fhzU7eOYtzz6tUl7S",
 >     "_updated": true,
+>     "_archived": false,
 >     "_created_at": 2022-03-20T00:00:00.000Z,
 >     "_created_timestamp": 1647745200000,
 >     "_updated_at": 2022-03-20T00:10:00.000Z,
