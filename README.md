@@ -43,17 +43,17 @@ npm install peak.db
 
 ## Documentation
 ### Constructor
-`new <PeakDB>.Collection(options)`
+`new Collection(options)`
 | Parameter | Default | Description |
 | --- | --- | --- |
 | options | | [Object]<br/>Collection options. |
 | options.name | | [String]<br/>Name of collection. |
 | options.type | | [String]<br/>[IMPORTANT] Type of the collection, which cannot be changed again later.<br/><br/>Valid values: `DOCUMENT_BASED`, `KEY_VALUE_BASED` |
-| options.id_length | 32 | [Number] (optional) [DOCUMENT BASED COLLECTIONS]<br/>This determines the length of unique identities given to documents. |
-| options.indicate_created_at | false | [Boolean] (optional) [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the creation date of documents. |
-| options.indicate_created_timestamp | false | [Boolean] (optional) [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the creation timestamp of documents. |
-| options.indicate_edited_at | false | [Boolean] (optional) [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the edited date of documents. |
-| options.indicate_edited_timestamp | false | [Boolean] (optional) [DOCUMENT BASED COLLECTIONS]<br/>Whether to specify the edited timestamp of documents. |
+| options.id_length | 32 | [Number] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>This determines the length of unique identities given to documents. |
+| options.indicate_created_at | false | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the creation date of documents. |
+| options.indicate_created_timestamp | false | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the creation timestamp of documents. |
+| options.indicate_edited_at | false | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the edited date of documents. |
+| options.indicate_edited_timestamp | false | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the edited timestamp of documents. |
 | options.save_timeout | 1 | [Number] (optional)<br/>This specifies how many seconds after a document is inserted, the collection will be saved. This way it limits the successive saving of the collection when many data are inserted in succession, so the system is not slowed down. Data loss may occur if the system is turned off after repeatedly entering data. When the document is added 5 times in a row, the collection is saved so that the data does not remain unsaved for a long time. This can be edited with the 'save_directly_after' option. |
 | options.save_directly_after | 5 | [Number] (optional)<br/>This specifies that after how many documents have been inserted, the collection will be saved without the save timeout. |
 | options.cache_retention_time | 10 | [Number] (optional)<br/>[If this value is `-1`, the cache is kept indefinitely] This indicates how much the cache will be held if the caching is enabled. If there is no activity in the collection, the cache is deleted, this prevents the loss of unnecessary RAM. |
