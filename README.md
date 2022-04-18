@@ -404,7 +404,7 @@ Push a data to array.
 > 
 > Example:
 > ```js
-> users_settings.get("USER_1.friends", "USER_2");
+> users_settings.push("USER_1.friends", "USER_2");
 > /*
 >   [
 >     "USER_2"
