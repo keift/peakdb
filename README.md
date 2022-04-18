@@ -508,7 +508,7 @@ Check if they have key or data.
 > users_settings.has("USER_1.hobbies"); // -> true
 > users_settings.has("USER_1.hobbies", data => data === "Watching TV"); // -> false
 > users_settings.has("USER_1.hobbies", "Watching TV"); // -> false
-> users_settings.has("USER_1.social_media_addresses", {"platform": "Instagram"}); // -> false
+> users_settings.has("USER_1.social_media_addresses", {"platform": "Instagram"}); // -> true
 > ```
 
 <br/>
