@@ -499,7 +499,7 @@ Check if they have key or data.
 > | Parameter | Description |
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
-> | params | [Function] \| [Object] \| [String] \|[Number]<br/>The parameters you will use to check the data. |
+> | params | [Function] \| [Object] \| [String] \| [Number]<br/>The parameters you will use to check the data. |
 > 
 > returns [Boolean]
 > 
