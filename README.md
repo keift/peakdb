@@ -257,7 +257,6 @@ Check if they have document.
 > Example:
 > ```js
 > accounts.has(document => document.region === "Muğla"); // -> true
-> // or
 > accounts.has({"region": "Muğla"}); // -> true
 > ```
 
@@ -500,7 +499,7 @@ Check if they have key or data.
 > | Parameter | Description |
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
-> | params | [Function] \| [Object]<br/>The parameters you will use to check the data. |
+> | params | [Function] \| [Object] \| [String]<br/>The parameters you will use to check the data. |
 > 
 > returns [Boolean]
 > 
@@ -508,6 +507,8 @@ Check if they have key or data.
 > ```js
 > users_settings.has("USER_1.hobbies"); // -> true
 > users_settings.has("USER_1.hobbies", data => data === "Watching TV"); // -> false
+> users_settings.has("USER_1.hobbies", "Watching TV"); // -> false
+> users_settings.has("USER_1.social_media_addresses", {"platform": "Instagram"}); // -> false
 > ```
 
 <br/>
