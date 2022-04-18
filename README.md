@@ -363,7 +363,7 @@ Set a value.
 > 
 > Example:
 > ```js
-> users_settings.set("USER_1", {"friend_requests": true});
+> user_settings.set("USER_1", {"friend_requests": true});
 > /*
 >   {
 >     "friend_requests": true
@@ -385,7 +385,7 @@ Get a value.
 > 
 > Example:
 > ```js
-> users_settings.get("USER_1.friend_requests"); // -> true
+> user_settings.get("USER_1.friend_requests"); // -> true
 > ```
 
 <br/>
@@ -403,7 +403,7 @@ Push a data to array.
 > 
 > Example:
 > ```js
-> users_settings.push("USER_1.friends", "USER_2");
+> user_settings.push("USER_1.friends", "USER_2");
 > /*
 >   [
 >     "USER_2"
@@ -426,7 +426,7 @@ Remove a data from array.
 > 
 > Example:
 > ```js
-> users_settings.remove("USER_1.friends", "USER_2");
+> user_settings.remove("USER_1.friends", "USER_2");
 > /*
 >   []
 > */
@@ -447,9 +447,9 @@ Find a data from array.
 > 
 > Example:
 > ```js
-> users_settings.find("USER_1.social_media_addresses", data => data.platform === "Instagram");
+> user_settings.find("USER_1.social_media_addresses", data => data.platform === "Instagram");
 > // or
-> users_settings.find("USER_1.social_media_addresses", {"platform": "Instagram"});
+> user_settings.find("USER_1.social_media_addresses", {"platform": "Instagram"});
 > /*
 >   {
 >     "platform": "Instagram",
@@ -473,9 +473,9 @@ Filter data from array.
 > 
 > Example:
 > ```js
-> users_settings.filter("USER_1.social_media_addresses", data => data.username === "fir4tozden");
+> user_settings.filter("USER_1.social_media_addresses", data => data.username === "fir4tozden");
 > // or
-> users_settings.filter("USER_1.social_media_addresses", {"username": "fir4tozden"});
+> user_settings.filter("USER_1.social_media_addresses", {"username": "fir4tozden"});
 > /*
 >   [
 >     {
@@ -505,10 +505,10 @@ Check if they have key or data.
 > 
 > Example:
 > ```js
-> users_settings.has("USER_1.hobbies"); // -> true
-> users_settings.has("USER_1.hobbies", data => data === "Watching TV"); // -> false
-> users_settings.has("USER_1.hobbies", "Watching TV"); // -> false
-> users_settings.has("USER_1.social_media_addresses", {"platform": "Instagram"}); // -> true
+> user_settings.has("USER_1.hobbies"); // -> true
+> user_settings.has("USER_1.hobbies", data => data === "Watching TV"); // -> false
+> user_settings.has("USER_1.hobbies", "Watching TV"); // -> false
+> user_settings.has("USER_1.social_media_addresses", {"platform": "Instagram"}); // -> true
 > ```
 
 <br/>
@@ -545,7 +545,7 @@ Reduce the number in the value.
 > 
 > Example:
 > ```js
-> users_settings.reduce("USER_1.age", 5); // -> 11
+> user_settings.reduce("USER_1.age", 5); // -> 11
 > ```
 
 <br/>
@@ -562,7 +562,7 @@ Reduce the number in the value.
 > 
 > Example:
 > ```js
-> users_settings.delete("USER_1.age"); // -> true
+> user_settings.delete("USER_1.age"); // -> true
 > ```
 
 <br/>
