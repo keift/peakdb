@@ -493,7 +493,7 @@ Filter data from array.
 
 <br/>
 
-`has(key, data)` *(key-value based)*
+`has(key, params)` *(key-value based)*
 
 Check if they have key or data.
 
