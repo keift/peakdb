@@ -248,7 +248,7 @@ Check if they have document.
 
 > | Parameter | Description |
 > | --- | --- |
-> | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
+> | params | [Function] \| [Object]<br/>The parameters you will use to check the data. |
 > | options | [Object] (optional)<br/>Find options. |
 > | options.cares_archived | [Boolean] (optional)<br/>Whether to has archived documents. |
 > 
@@ -500,14 +500,14 @@ Check if they have key or data.
 > | Parameter | Description |
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
-> | data | [String] \| [Object] (optional)<br/>The data for in array. |
+> | params | [Function] \| [Object]<br/>The parameters you will use to check the data. |
 > 
 > returns [Boolean]
 > 
 > Example:
 > ```js
 > users_settings.has("USER_1.hobbies"); // -> true
-> users_settings.has("USER_1.hobbies", "Watching TV"); // -> false
+> users_settings.has("USER_1.hobbies", data => data === "Watching TV"); // -> false
 > ```
 
 <br/>
