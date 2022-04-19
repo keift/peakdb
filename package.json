@@ -1,7 +1,7 @@
 {
   "name": "peak.db",
   "author": "paiode",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.",
   "license": "MIT",
   "main": "main.js",
