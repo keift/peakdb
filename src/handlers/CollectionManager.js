@@ -201,7 +201,7 @@ module.exports.document_based = {
     , has: (e, t, r, o) => {
         if (!r) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mNot specified: Collection.Has(Key, ...)"), !1;
         if ("string" != typeof r && "number" != typeof r) return Debugger.error("\x1b[35m(Collection#" + t.name + "): \x1b[31mIncorrect parameter type: Collection.Has(Key, ...)"), !1;
-        if ("function" == typeof o || "object" == typeof o || "string" == typeof o || "number" == typeof o) {
+        if (!o || "function" == typeof o || "object" == typeof o || "string" == typeof o || "number" == typeof o) {
             if (o) {
                 let i = e.get()
                     , a = lodash.get(i, r);
