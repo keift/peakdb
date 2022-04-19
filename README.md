@@ -53,6 +53,10 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 >  * Updates for Document Based Collections:
 >    * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
 >    * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
+>    * **`<Collection>.Find(..., options)` added.** You can customize it with options to find.
+>    * **`<Collection>.Filter(..., options)` added.** You can customize it with options to filter.
+>    * **`FindOptions.Archived<[Boolean]>` added.** With this option you can specify whether to find archived documents or not.
+>    * **`FilterOptions.Archived<[Boolean]>` added.** With this option you can specify whether to filter archived documents or not.
 >  * Updates for Key-Value Based Collections:
 >    * **`<Collection>.Find()` added.** You can find the data in the array.
 >    * **`<Collection>.Filter()` added.** You can filter the data in the array.
@@ -169,15 +173,15 @@ Find a document.
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to find the data. |
 > | options | [Object] (optional)<br/>Find options. |
-> | options.cares_archived | [Boolean] (optional)<br/>Whether to find archived documents. |
+> | options.archived | [Boolean] (optional)<br/>Whether to find archived documents. |
 > 
 > returns [Object]
 > 
 > Example:
 > ```js
-> accounts.find(document => document.email === "fir4tozden@gmail.com", {"cares_archived": true});
+> accounts.find(document => document.email === "fir4tozden@gmail.com", {"archived": true});
 > // or
-> accounts.find({"email": "fir4tozden@gmail.com"}, {"cares_archived": true});
+> accounts.find({"email": "fir4tozden@gmail.com"}, {"archived": true});
 > /*
 >   {
 >     "_id": "RMmXZVDfQrVLQwFlquMPb98XNUCxQ6MM",
@@ -203,15 +207,15 @@ Filter documents.
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to filter the data. |
 > | options | [Object] (optional)<br/>Filter options. |
-> | options.cares_archived | [Boolean] (optional)<br/>Whether to filter archived documents. |
+> | options.archived | [Boolean] (optional)<br/>Whether to filter archived documents. |
 > 
 > returns [Array]<[Object]>
 > 
 > Example:
 > ```js
-> accounts.filter(document => document.region === "Muğla", {"cares_archived": true});
+> accounts.filter(document => document.region === "Muğla", {"archived": true});
 > // or
-> accounts.filter({"region": "Muğla"}, {"cares_archived": true});
+> accounts.filter({"region": "Muğla"}, {"archived": true});
 > /*
 >   [
 >     {
@@ -250,7 +254,7 @@ Check if they have document.
 > | --- | --- |
 > | params | [Function] \| [Object]<br/>The parameters you will use to check the data. |
 > | options | [Object] (optional)<br/>Find options. |
-> | options.cares_archived | [Boolean] (optional)<br/>Whether to has archived documents. |
+> | options.archived | [Boolean] (optional)<br/>Whether to has archived documents. |
 > 
 > returns [Boolean]
 > 
@@ -326,7 +330,7 @@ Unarchive a document.
 > 
 > Example:
 > ```js
-> let document = accounts.find(document => document.email === "fir4tozden@gmail.com", {"cares_archived": true});
+> let document = accounts.find(document => document.email === "fir4tozden@gmail.com", {"archived": true});
 > accounts.unarchive(document._id); // -> true
 > ```
 
