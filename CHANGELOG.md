@@ -11,8 +11,10 @@
 >    * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
 >    * **`<Collection>.Find(..., options)` added.** You can customize it with options to find.
 >    * **`<Collection>.Filter(..., options)` added.** You can customize it with options to filter.
+>    * **`<Collection>.Has(..., options)` added.** You can customize it with options to check.
 >    * **`<FindOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to find archived documents or not.
 >    * **`<FilterOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to filter archived documents or not.
+>    * **`<HasOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to check archived documents or not.
 >  * Updates for Key-Value Based Collections:
 >    * **`<Collection>.Find()` added.** You can find the data in the array.
 >    * **`<Collection>.Filter()` added.** You can filter the data in the array.
