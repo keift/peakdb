@@ -1,8 +1,4 @@
-module.exports = {
-    log: o => {
-        console.log("\x1b[36mpeakdb \x1b[34m» \x1b[32m" + o + "\x1b[0m")
-    }
-    , error: o => {
-        console.error("\x1b[36mpeakdb \x1b[34m» \x1b[31m" + o + "\x1b[0m")
-    }
-};
+const Package = require("../../package.json");
+module.exports.log = (e => console.log("\x1b[36m" + Package.name.split(".")
+    .join("") + " \x1b[34m» \x1b[32m" + e + "\x1b[0m")), module.exports.error = (e => console.error("\x1b[36m" + Package.name.split(".")
+    .join("") + " \x1b[34m» \x1b[31m" + e + "\x1b[0m"));
