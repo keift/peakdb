@@ -113,13 +113,13 @@ Create a collection where you can manage and store your data.
 >   */
 >   "id_length": 32,
 >   "indicate_created_at": false,
->   "indicate_created_timestamp": false,
+>   "indicate_created_timestamp": true,
 >   "indicate_updated_at": false,
->   "indicate_updated_timestamp": false,
+>   "indicate_updated_timestamp": true,
 >   "indicate_archived_at": false,
->   "indicate_archived_timestamp": false,
+>   "indicate_archived_timestamp": true,
 >   "indicate_unarchived_at": false,
->   "indicate_unarchived_timestamp": false,
+>   "indicate_unarchived_timestamp": true,
 >   
 >   /*
 >     Can be used on all collection types
@@ -128,9 +128,9 @@ Create a collection where you can manage and store your data.
 >   "save_directly_after": 5,
 >   "cache_retention_time": 10,
 >   "backup_retention_time": 3,
->   "caching": false,
->   "auto_backup": false,
->   "detailed_debugger_logs": false,
+>   "caching": true,
+>   "auto_backup": true,
+>   "detailed_debugger_logs": true,
 >   "activate_destroy_function": false
 > });
 > ```
