@@ -326,7 +326,7 @@ Unarchive a document.
 
 > | Parameter | Description |
 > | --- | --- |
-> | document_id | [String]<br/>The ID of the document to be archived. |
+> | document_id | [String]<br/>The ID of the document to be unarchived. |
 > 
 > returns [Boolean]
 > 
