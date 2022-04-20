@@ -44,32 +44,32 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 ### v2.1.0 → v2.2.0
 
->  * Updates for System:
->    * **Bugs fixed.** Fixed some bugs in the system.
->    * **`<CollectionOptions>.Indicate_Archived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are archived.
->    * **`<CollectionOptions>.Indicate_Archived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are archived.
->    * **`<CollectionOptions>.Indicate_Unarchived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are unarchived.
->    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are unarchived.
->  * Updates for Document Based Collections:
->    * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
->    * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
->    * **`<Collection>.Find(..., options)` added.** You can customize it with options to find.
->    * **`<Collection>.Filter(..., options)` added.** You can customize it with options to filter.
->    * **`<Collection>.Has(..., options)` added.** You can customize it with options to check.
->    * **`<FindOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to find archived documents or not.
->    * **`<FilterOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to filter archived documents or not.
->    * **`<HasOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to check archived documents or not.
->  * Updates for Key-Value Based Collections:
->    * **`<Collection>.Find()` added.** You can find the data in the array.
->    * **`<Collection>.Filter()` added.** You can filter the data in the array.
+  * Updates for System:
+    * **Bugs fixed.** Fixed some bugs in the system.
+    * **`<CollectionOptions>.Indicate_Archived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are archived.
+    * **`<CollectionOptions>.Indicate_Archived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are archived.
+    * **`<CollectionOptions>.Indicate_Unarchived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are unarchived.
+    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are unarchived.
+  * Updates for Document Based Collections:
+    * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
+    * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
+    * **`<Collection>.Find(..., options)` added.** You can customize it with options to find.
+    * **`<Collection>.Filter(..., options)` added.** You can customize it with options to filter.
+    * **`<Collection>.Has(..., options)` added.** You can customize it with options to check.
+    * **`<FindOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to find archived documents or not.
+    * **`<FilterOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to filter archived documents or not.
+    * **`<HasOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to check archived documents or not.
+  * Updates for Key-Value Based Collections:
+    * **`<Collection>.Find()` added.** You can find the data in the array.
+    * **`<Collection>.Filter()` added.** You can filter the data in the array.
 
 [*... see all*](CHANGELOG.md#change-log)
 
 ## Installation
 
-> ```sh-session
-> npm install peak.db
-> ```
+```sh-session
+npm install peak.db
+```
 
 ## Documentation
 
