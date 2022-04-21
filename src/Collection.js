@@ -34,7 +34,7 @@ class Collection {
         if (e.backup_retention_time && "number" != typeof e.backup_retention_time) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Backup_Retention_Time");
         if (e.caching && "boolean" != typeof e.caching) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Caching");
         if (e.auto_create_backup && "boolean" != typeof e.auto_create_backup) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Auto_Create_Backup");
-        if (e.debugging_logs && "boolean" != typeof e.debugging_logs) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Debugging_Logs");
+        if (e.detailed_debugger_logs && "boolean" != typeof e.detailed_debugger_logs) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Detailed_Debugger_Logs");
         if (e.type && "DOCUMENT_BASED" !== e.type && "KEY_VALUE_BASED" !== e.type) return Debugger.error('Valid option value: CollectionCollectionOptions.Type === "DOCUMENT_BASED" || "KEY_VALUE_BASED"');
         if ("DOCUMENT_BASED" === e.type) {
             if (e.id_length && e.id_length < 4) return Debugger.error("Valid option value: CollectionCollectionOptions.Id_Length >= 4");
