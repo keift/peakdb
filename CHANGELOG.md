@@ -7,6 +7,8 @@
     * **`<Collection>.LoadBackup()` added.** With this function, you can easily restore backups.
     * **`<Collection>.CreateBackup()` returns changed.** Now this function, if successful, will return the filename of the backed up collection on its return.
     * **`<CollectionOptions>.Auto_Backup` changed.** This option will now be used as `auto_create_backup`.
+  * Updates for Key-Value Based Collections:
+    * **<Collection>.Reduce() changed.** This function will now be used as `decrease()`.
 
 ## v2.1.0 → v2.2.0
 
