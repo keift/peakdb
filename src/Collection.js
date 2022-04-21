@@ -60,18 +60,18 @@ class Collection {
                 })), this._DataManager = new DataManager.Manager(this._CollectionManager, e), Debugger.log("Collection '\x1b[35m" + e.name + "\x1b[32m' has been started."), !0 === e.caching && Debugger.log("\x1b[31mWARNING! \x1b[32mCaching is active, data are kept in cache. For these large collections, it means more RAM loss."), "DOCUMENT_BASED" === e.type ? (this._DocumentBasedCollection = new DocumentBasedCollection.Collection(this._DataManager, e), this.insert = (e => this._DocumentBasedCollection.insert(e)), this.find = ((e, t) => this._DocumentBasedCollection.find(e, t)), this.filter = ((e, t) => this._DocumentBasedCollection.filter(e, t)), this.has = ((e, t) => this._DocumentBasedCollection.has(e, t)), this.update = ((e, t) => this._DocumentBasedCollection.update(e, t)), this.archive = (e => this._DocumentBasedCollection.archive(e)), this.unarchive = (e => this._DocumentBasedCollection.unarchive(e)), this.delete = (e => this._DocumentBasedCollection.delete(e))) : "KEY_VALUE_BASED" === e.type && (this._KeyValueBasedCollection = new KeyValueBasedCollection.Collection(this._DataManager, e), this.set = ((e, t) => this._KeyValueBasedCollection.set(e, t)), this.get = (e => this._KeyValueBasedCollection.get(e)), this.push = ((e, t) => this._KeyValueBasedCollection.push(e, t)), this.remove = ((e, t) => this._KeyValueBasedCollection.remove(e, t)), this.find = ((e, t) => this._KeyValueBasedCollection.find(e, t)), this.filter = ((e, t) => this._KeyValueBasedCollection.filter(e, t)), this.has = ((e, t) => this._KeyValueBasedCollection.has(e, t)), this.increase = ((e, t) => this._KeyValueBasedCollection.increase(e, t)), this.reduce = ((e, t) => this._KeyValueBasedCollection.reduce(e, t)), this.delete = (e => this._KeyValueBasedCollection.delete(e))), this.createBackup = (() => {
                     fs.mkdirSync(path.join("./", "./peakdb/Backups/Collections"), {
                         recursive: !0
-                    }, t => (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mError when backing up collection."), !1));
+                    }, t => (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mAn error occurred while creating the backup."), !1));
                     let t = e.name + "_" + (new Date)
                         .getFullYear() + "-" + zeroBeforeNumber((new Date)
                             .getMonth() + 1) + "-" + zeroBeforeNumber((new Date)
                             .getDate()) + "_" + zeroBeforeNumber((new Date)
                             .getHours()) + zeroBeforeNumber((new Date)
                             .getMinutes()) + ".pea";
-                    return !1 !== fs.existsSync("./peakdb/Backups/Collections/" + t) ? (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mA backup has already been taken recently."), !1) : (this._CollectionManager.backup("./peakdb/Backups/Collections/" + t)
+                    return !1 !== fs.existsSync("./peakdb/Backups/Collections/" + t) ? (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mA backup has already been created recently."), !1) : (this._CollectionManager.backup("./peakdb/Backups/Collections/" + t)
                         .then(() => {
-                            Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection has been backed up with name '\x1b[35m" + t + "\x1b[32m'.")
+                            Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection backup was created with filename '\x1b[35m" + t + "\x1b[32m'.")
                         })
-                        .catch(t => (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mError when backing up collection."), !1)), t)
+                        .catch(t => (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mAn error occurred while creating the backup."), !1)), t)
                 }), this.loadBackup = (t => t ? "string" != typeof t ? (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mIncorrect parameter type: Collection.LoadBackup(Filename)"), !1) : (t.endsWith(".pea") || (t += ".pea"), !1 === fs.existsSync("./peakdb/Backups/Collections/" + t) ? (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mBackup with filename '\x1b[35m" + t + "\x1b[31m' not found."), !1) : (this._BackupCollectionManager = new sqlite3("./peakdb/Backups/Collections/" + t), "DOCUMENT_BASED" === e.type && this._BackupCollectionManager.prepare("SELECT data FROM peakdb")
                     .all()[0] && !1 === Array.isArray(bson.deserialize(this._BackupCollectionManager.prepare("SELECT * FROM peakdb")
                             .all()[0].data)
@@ -83,7 +83,7 @@ class Collection {
                         .data, Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection successfully loaded from file with name '\x1b[35m" + t + "\x1b[32m'."), this._DataManager.set(this._BackupData), !0))) : (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mNot specified: Collection.LoadBackup(Filename)"), !1)), !0 === e.activate_destroy_function && (this.destroy = (() => (Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection has been destroyed."), "DOCUMENT_BASED" === e.type ? this._DataManager.set([]) : "KEY_VALUE_BASED" === e.type && this._DataManager.set({}), !0))), void(!0 === e.auto_backup && setInterval(() => {
                     fs.mkdirSync(path.join("./", "./peakdb/Backups/Collections"), {
                         recursive: !0
-                    }, t => Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mError when backing up collection.")), (e.backup_retention_time || 3) > -1 && find_remove("./peakdb/Backups/Collections", {
+                    }, t => Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mAn error occurred while creating the backup.")), (e.backup_retention_time || 3) > -1 && find_remove("./peakdb/Backups/Collections", {
                         age: {
                             seconds: 86400 * (e.backup_retention_time || 3)
                         }
@@ -95,10 +95,10 @@ class Collection {
                             .getDate()) + "_AUTO.pea";
                     !0 !== fs.existsSync("./peakdb/Backups/Collections/" + t) && this._CollectionManager.backup("./peakdb/Backups/Collections/" + t)
                         .then(() => {
-                            Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection has been backed up with name '\x1b[35m" + t + "\x1b[32m'.")
+                            Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection backup was created with filename '\x1b[35m" + t + "\x1b[32m'.")
                         })
                         .catch(t => {
-                            Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mError when backing up collection.")
+                            Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mAn error occurred while creating the backup.")
                         })
                 }, 6e4))))
     }
