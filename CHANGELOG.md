@@ -5,6 +5,7 @@
   * Updates for System:
     * **`<Collection>.Backup()` changed.** This function will now be used as `createBackup()`.
     * **`<Collection>.LoadBackup()` added.** With this function, you can easily restore backups.
+    * **`<Collection>.CreateBackup()` returns changed.** Now this function, if successful, will return the filename of the backed up collection on its return.
   * Updates for Document Based Collections:
     * **`<CollectionOptions>.Auto_Backup` changed.** This option will now be used as `auto_create_backup`.
 
