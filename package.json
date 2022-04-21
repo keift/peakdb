@@ -1,7 +1,7 @@
 {
   "name": "peak.db",
   "author": "paiode",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.",
   "license": "MIT",
   "main": "main.js",
@@ -13,8 +13,7 @@
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "nanoid": "^3.3.3",
-    "path": "^0.12.7",
-    "peak.db": "^2.2.1"
+    "path": "^0.12.7"
   },
   "engines": {
     "node": ">= 12.0.0"
