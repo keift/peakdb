@@ -33,7 +33,7 @@ class Collection {
         if (e.cache_retention_time && "number" != typeof e.cache_retention_time) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Cache_Retention_Time");
         if (e.backup_retention_time && "number" != typeof e.backup_retention_time) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Backup_Retention_Time");
         if (e.caching && "boolean" != typeof e.caching) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Caching");
-        if (e.auto_backup && "boolean" != typeof e.auto_backup) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Auto_Backup");
+        if (e.auto_create_backup && "boolean" != typeof e.auto_create_backup) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Auto_Create_Backup");
         if (e.debugging_logs && "boolean" != typeof e.debugging_logs) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Debugging_Logs");
         if (e.type && "DOCUMENT_BASED" !== e.type && "KEY_VALUE_BASED" !== e.type) return Debugger.error('Valid option value: CollectionCollectionOptions.Type === "DOCUMENT_BASED" || "KEY_VALUE_BASED"');
         if ("DOCUMENT_BASED" === e.type) {
@@ -80,7 +80,7 @@ class Collection {
                             .all()[0].data)
                         .data) ? Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mThe type of this backup does not match the type of this collection.") : (this._BackupData = bson.deserialize(this._BackupCollectionManager.prepare("SELECT * FROM peakdb")
                             .all()[0].data)
-                        .data, Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection successfully loaded from file with name '\x1b[35m" + t + "\x1b[32m'."), this._DataManager.set(this._BackupData), !0))) : (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mNot specified: Collection.LoadBackup(Filename)"), !1)), !0 === e.activate_destroy_function && (this.destroy = (() => (Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection has been destroyed."), "DOCUMENT_BASED" === e.type ? this._DataManager.set([]) : "KEY_VALUE_BASED" === e.type && this._DataManager.set({}), !0))), void(!0 === e.auto_backup && setInterval(() => {
+                        .data, Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection successfully loaded from file with name '\x1b[35m" + t + "\x1b[32m'."), this._DataManager.set(this._BackupData), !0))) : (Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mNot specified: Collection.LoadBackup(Filename)"), !1)), !0 === e.activate_destroy_function && (this.destroy = (() => (Debugger.log("\x1b[35m(Collection#" + e.name + "): \x1b[32mCollection has been destroyed."), "DOCUMENT_BASED" === e.type ? this._DataManager.set([]) : "KEY_VALUE_BASED" === e.type && this._DataManager.set({}), !0))), void(!0 === e.auto_create_backup && setInterval(() => {
                     fs.mkdirSync(path.join("./", "./peakdb/Backups/Collections"), {
                         recursive: !0
                     }, t => Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mAn error occurred while creating the backup.")), (e.backup_retention_time || 3) > -1 && find_remove("./peakdb/Backups/Collections", {
