@@ -12,10 +12,10 @@
 
   * Updates for System:
     * **Bugs fixed.** Fixed some bugs in the system.
-    * **`<CollectionOptions>.Indicate_Archived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are archived.
-    * **`<CollectionOptions>.Indicate_Archived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are archived.
-    * **`<CollectionOptions>.Indicate_Unarchived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are unarchived.
-    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are unarchived.
+    * **`<CollectionOptions>.Indicate_Archived_At<[Boolean]>` added.** If this is enabled, will be automatically specified date when documents are archived.
+    * **`<CollectionOptions>.Indicate_Archived_Timestamp<[Boolean]>` added.** If this is enabled, will be automatically specified timestamp when documents are archived.
+    * **`<CollectionOptions>.Indicate_Unarchived_At<[Boolean]>` added.** If this is enabled, will be automatically specified date when documents are unarchived.
+    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp<[Boolean]>` added.** If this is enabled, will be automatically specified timestamp when documents are unarchived.
   * Updates for Document Based Collections:
     * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
     * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
@@ -39,7 +39,7 @@
     * **Added find and filter with JSON.** In your collection, you can also use JSON for find and filter operations instead of functions.
     * **Data read and write optimized.** Your data has been rendered faster and unnecessary RAM loss has been prevented.
     * **`<CollectionOptions>.Type<[String]>` added.** This allows you to specify type of your collection. Valid values: `DOCUMENT_BASED` and `KEY_VALUE_BASED`
-    * **`<CollectionOptions>.Activate_Destroy_Function<[Boolean]>` added.** If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command.
+    * **`<CollectionOptions>.Activate_Destroy_Function<[Boolean]>` added.** If this is enabled, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command.
   * Updates for Key-Value Based Collections:
     * **`<Collection>.Set()` added.** This allows you to set a data to your collection.
     * **`<Collection>.Get()` added.** This allows you to get a data into your collection.
