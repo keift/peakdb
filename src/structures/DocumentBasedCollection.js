@@ -1,7 +1,7 @@
 const {
   isJSON: isJSON
   , separateNumber: separateNumber
-} = require("../util/Functions.js"), Debugger = require("../util/Debugger.js"), {
+} = require("../util/Tools.js"), Debugger = require("../util/Debugger.js"), {
   find: find
   , filter: filter
 } = require("lodash"), {

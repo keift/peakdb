@@ -4,7 +4,7 @@ const DocumentBasedCollection = require("./structures/DocumentBasedCollection.js
     , {
         rebuildCollectionName: rebuildCollectionName
         , zeroBeforeNumber: zeroBeforeNumber
-    } = require("./util/Functions.js")
+    } = require("./util/Tools.js")
     , Debugger = require("./util/Debugger.js")
     , sqlite3 = require("better-sqlite3")
     , bson = require("bson")
