@@ -13,34 +13,34 @@ const DocumentBasedCollection = require("./structures/DocumentBasedCollection.js
     , path = require("path");
 class Collection {
     constructor(e) {
-        if (!e || !e.name || "" === rebuildCollectionName(e.name)) return Debugger.error("Not specified: CollectionCollectionOptions.Name");
-        if (!e.type) return Debugger.error("Not specified: CollectionCollectionOptions.Type");
-        if (e.name && "string" != typeof e.name) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Name");
-        if (e.type && "string" != typeof e.type) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Type");
+        if (!e || !e.name || "" === rebuildCollectionName(e.name)) return Debugger.error("Not specified: CollectionOptions.Name");
+        if (!e.type) return Debugger.error("Not specified: CollectionOptions.Type");
+        if (e.name && "string" != typeof e.name) return Debugger.error("Incorrect option type: CollectionOptions.Name");
+        if (e.type && "string" != typeof e.type) return Debugger.error("Incorrect option type: CollectionOptions.Type");
         if ("DOCUMENT_BASED" === e.type) {
-            if (e.id_length && "number" != typeof e.id_length) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Id_Length");
-            if (e.indicate_created_at && "boolean" != typeof e.indicate_created_at) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Created_At");
-            if (e.indicate_created_timestamp && "boolean" != typeof e.indicate_created_timestamp) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Created_Timestamp");
-            if (e.indicate_updated_at && "boolean" != typeof e.indicate_updated_at) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Updated_At");
-            if (e.indicate_updated_timestamp && "boolean" != typeof e.indicate_updated_timestamp) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Updated_Timestamp");
-            if (e.indicate_archived_at && "boolean" != typeof e.indicate_archived_at) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Archived_At");
-            if (e.indicate_archived_timestamp && "boolean" != typeof e.indicate_archived_timestamp) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Archived_Timestamp");
-            if (e.indicate_unarchived_at && "boolean" != typeof e.indicate_unarchived_at) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Unarchived_At");
-            if (e.indicate_unarchived_timestamp && "boolean" != typeof e.indicate_unarchived_timestamp) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Indicate_Unarchived_Timestamp")
+            if (e.id_length && "number" != typeof e.id_length) return Debugger.error("Incorrect option type: CollectionOptions.Id_Length");
+            if (e.indicate_created_at && "boolean" != typeof e.indicate_created_at) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Created_At");
+            if (e.indicate_created_timestamp && "boolean" != typeof e.indicate_created_timestamp) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Created_Timestamp");
+            if (e.indicate_updated_at && "boolean" != typeof e.indicate_updated_at) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Updated_At");
+            if (e.indicate_updated_timestamp && "boolean" != typeof e.indicate_updated_timestamp) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Updated_Timestamp");
+            if (e.indicate_archived_at && "boolean" != typeof e.indicate_archived_at) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Archived_At");
+            if (e.indicate_archived_timestamp && "boolean" != typeof e.indicate_archived_timestamp) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Archived_Timestamp");
+            if (e.indicate_unarchived_at && "boolean" != typeof e.indicate_unarchived_at) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Unarchived_At");
+            if (e.indicate_unarchived_timestamp && "boolean" != typeof e.indicate_unarchived_timestamp) return Debugger.error("Incorrect option type: CollectionOptions.Indicate_Unarchived_Timestamp")
         }
-        if (e.save_timeout && "number" != typeof e.save_timeout) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Save_Timeout");
-        if (e.save_directly_after && "number" != typeof e.save_directly_after) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Save_Directly_After");
-        if (e.cache_retention_time && "number" != typeof e.cache_retention_time) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Cache_Retention_Time");
-        if (e.backup_retention_time && "number" != typeof e.backup_retention_time) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Backup_Retention_Time");
-        if (e.caching && "boolean" != typeof e.caching) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Caching");
-        if (e.auto_create_backup && "boolean" != typeof e.auto_create_backup) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Auto_Create_Backup");
-        if (e.detailed_debugger_logs && "boolean" != typeof e.detailed_debugger_logs) return Debugger.error("Incorrect option type: CollectionCollectionOptions.Detailed_Debugger_Logs");
-        if (e.type && "DOCUMENT_BASED" !== e.type && "KEY_VALUE_BASED" !== e.type) return Debugger.error('Valid option value: CollectionCollectionOptions.Type === "DOCUMENT_BASED" || "KEY_VALUE_BASED"');
+        if (e.save_timeout && "number" != typeof e.save_timeout) return Debugger.error("Incorrect option type: CollectionOptions.Save_Timeout");
+        if (e.save_directly_after && "number" != typeof e.save_directly_after) return Debugger.error("Incorrect option type: CollectionOptions.Save_Directly_After");
+        if (e.cache_retention_time && "number" != typeof e.cache_retention_time) return Debugger.error("Incorrect option type: CollectionOptions.Cache_Retention_Time");
+        if (e.backup_retention_time && "number" != typeof e.backup_retention_time) return Debugger.error("Incorrect option type: CollectionOptions.Backup_Retention_Time");
+        if (e.caching && "boolean" != typeof e.caching) return Debugger.error("Incorrect option type: CollectionOptions.Caching");
+        if (e.auto_create_backup && "boolean" != typeof e.auto_create_backup) return Debugger.error("Incorrect option type: CollectionOptions.Auto_Create_Backup");
+        if (e.detailed_debugger_logs && "boolean" != typeof e.detailed_debugger_logs) return Debugger.error("Incorrect option type: CollectionOptions.Detailed_Debugger_Logs");
+        if (e.type && "DOCUMENT_BASED" !== e.type && "KEY_VALUE_BASED" !== e.type) return Debugger.error('Valid option value: CollectionOptions.Type === "DOCUMENT_BASED" || "KEY_VALUE_BASED"');
         if ("DOCUMENT_BASED" === e.type) {
-            if (e.id_length && e.id_length < 4) return Debugger.error("Valid option value: CollectionCollectionOptions.Id_Length >= 4");
-            if (e.id_length && e.id_length > 256) return Debugger.error("Valid option value: CollectionCollectionOptions.Id_Length <= 256")
+            if (e.id_length && e.id_length < 4) return Debugger.error("Valid option value: CollectionOptions.Id_Length >= 4");
+            if (e.id_length && e.id_length > 256) return Debugger.error("Valid option value: CollectionOptions.Id_Length <= 256")
         }
-        return e.save_timeout && e.save_timeout < 1 ? Debugger.error("Valid option value: CollectionCollectionOptions.Save_Timeout >= 1") : e.save_timeout && e.save_timeout > 25 ? Debugger.error("Valid option value: CollectionCollectionOptions.Save_Timeout <= 25") : e.save_directly_after && e.save_directly_after < 1 ? Debugger.error("Valid option value: CollectionCollectionOptions.Save_Directly_After >= 1") : e.save_directly_after && e.save_directly_after > 500 ? Debugger.error("Valid option value: CollectionCollectionOptions.Save_Directly_After <= 500") : e.cache_retention_time && e.cache_retention_time < -1 ? Debugger.error("Valid option value: CollectionCollectionOptions.Cache_Retention_Time >= -1") : e.cache_retention_time && e.cache_retention_time > 20160 ? Debugger.error("Valid option value: CollectionCollectionOptions.Cache_Retention_Time <= 20160") : e.backup_retention_time && e.backup_retention_time < -1 ? Debugger.error("Valid option value: CollectionCollectionOptions.Backup_Retention_Time >= -1") : e.backup_retention_time && e.backup_retention_time > 365 ? Debugger.error("Valid option value: CollectionCollectionOptions.Backup_Retention_Time <= 365") : (e.name = rebuildCollectionName(e.name), Debugger.log("Starting collection '\x1b[35m" + e.name + "\x1b[32m'..."), fs.mkdirSync(path.join("./", "./peakdb/Collections"), {
+        return e.save_timeout && e.save_timeout < 1 ? Debugger.error("Valid option value: CollectionOptions.Save_Timeout >= 1") : e.save_timeout && e.save_timeout > 25 ? Debugger.error("Valid option value: CollectionOptions.Save_Timeout <= 25") : e.save_directly_after && e.save_directly_after < 1 ? Debugger.error("Valid option value: CollectionOptions.Save_Directly_After >= 1") : e.save_directly_after && e.save_directly_after > 500 ? Debugger.error("Valid option value: CollectionOptions.Save_Directly_After <= 500") : e.cache_retention_time && e.cache_retention_time < -1 ? Debugger.error("Valid option value: CollectionOptions.Cache_Retention_Time >= -1") : e.cache_retention_time && e.cache_retention_time > 20160 ? Debugger.error("Valid option value: CollectionOptions.Cache_Retention_Time <= 20160") : e.backup_retention_time && e.backup_retention_time < -1 ? Debugger.error("Valid option value: CollectionOptions.Backup_Retention_Time >= -1") : e.backup_retention_time && e.backup_retention_time > 365 ? Debugger.error("Valid option value: CollectionOptions.Backup_Retention_Time <= 365") : (e.name = rebuildCollectionName(e.name), Debugger.log("Starting collection '\x1b[35m" + e.name + "\x1b[32m'..."), fs.mkdirSync(path.join("./", "./peakdb/Collections"), {
                 recursive: !0
             }, t => Debugger.error("\x1b[35m(Collection#" + e.name + "): \x1b[31mError creating folders.")), this._CollectionManager = new sqlite3("./peakdb/Collections/" + e.name + ".pea"), this._CollectionManager.prepare("CREATE TABLE IF NOT EXISTS peakdb (data)")
             .run(), "DOCUMENT_BASED" === e.type && this._CollectionManager.prepare("SELECT data FROM peakdb")
