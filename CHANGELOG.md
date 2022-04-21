@@ -3,10 +3,10 @@
 ## v2.2.1 → v2.3.0
 
   * Updates for System:
-    * **<Collection>.Backup() changed.** This function will now be used as `createBackup()`.
-    * **<Collection>.LoadBackup() added.** With this function, you can easily restore backups.
+    * **`<Collection>.Backup()` changed.** This function will now be used as `createBackup()`.
+    * **`<Collection>.LoadBackup()` added.** With this function, you can easily restore backups.
   * Updates for Document Based Collections:
-    * **`<CollectionOptions>.Auto_Backup changed.** This option will now be used as `auto_create_backup`.
+    * **`<CollectionOptions>.Auto_Backup` changed.** This option will now be used as `auto_create_backup`.
 
 ## v2.1.0 → v2.2.0
 
