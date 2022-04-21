@@ -42,14 +42,24 @@ Fast and advanced, document based and key-value based NoSQL database that able t
 
 ## Latest Updates
 
+### v2.2.1 → v2.3.0
+
+  * Updates for System:
+    * **`<Collection>.Backup()` changed.** This function will now be used as `createBackup()`.
+    * **`<Collection>.LoadBackup()` added.** With this function, you can easily restore backups.
+    * **`<Collection>.CreateBackup()` returns changed.** Now this function, if successful, will return the filename of the backed up collection on its return.
+    * **`<CollectionOptions>.Auto_Backup` changed.** This option will now be used as `auto_create_backup`.
+  * Updates for Key-Value Based Collections:
+    * **`<Collection>.Reduce()` changed.** This function will now be used as `decrease()`.
+
 ### v2.1.0 → v2.2.0
 
   * Updates for System:
     * **Bugs fixed.** Fixed some bugs in the system.
-    * **`<CollectionOptions>.Indicate_Archived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are archived.
-    * **`<CollectionOptions>.Indicate_Archived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are archived.
-    * **`<CollectionOptions>.Indicate_Unarchived_At<[Boolean]>` added.** If this is active, will be automatically specified date when documents are unarchived.
-    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp<[Boolean]>` added.** If this is active, will be automatically specified timestamp when documents are unarchived.
+    * **`<CollectionOptions>.Indicate_Archived_At<[Boolean]>` added.** If this is enabled, will be automatically specified date when documents are archived.
+    * **`<CollectionOptions>.Indicate_Archived_Timestamp<[Boolean]>` added.** If this is enabled, will be automatically specified timestamp when documents are archived.
+    * **`<CollectionOptions>.Indicate_Unarchived_At<[Boolean]>` added.** If this is enabled, will be automatically specified date when documents are unarchived.
+    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp<[Boolean]>` added.** If this is enabled, will be automatically specified timestamp when documents are unarchived.
   * Updates for Document Based Collections:
     * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
     * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
@@ -97,10 +107,10 @@ Create a collection where you can manage and store your data.
 > | options.save_directly_after | `5` | [Number] (optional)<br/>This specifies that after how many documents have been inserted, the collection will be saved without the save timeout. |
 > | options.cache_retention_time | `10` | [Number] (optional)<br/>[If this value is `-1`, the cache is kept indefinitely] This specifies how many minutes the cache will be retained if caching is enabled. If there is no activity in the collection, the cache is cleared, thus preventing RAM loss. |
 > | options.backup_retention_time | `3` | [Number] (optional)<br/>[If this value is `-1`, backups will never be deleted] This determines after how many days the backups will be deleted. |
-> | options.caching | `false` | [Boolean] (optional)<br/>[IMPORTANT] If this is active, the data is kept in the cache. In this case, the data is processed quickly, but the size of the collection is the loss of RAM. Is not preferred for large collections. |
-> | options.auto_backup | `false` | [Boolean] (optional)<br/>If this is active, this collection will receive automatic backups. |
-> | options.detailed_debugger_logs | `false` | [Boolean] (optional)<br/>If this is active, it will print more events in the collection to the console. |
-> | options.activate_destroy_function | `false` | [Boolean] (optional)<br/>[IMPORTANT] If this is active, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command. |
+> | options.caching | `false` | [Boolean] (optional)<br/>[IMPORTANT] If this is enabled, the data is kept in the cache. In this case, the data is processed quickly, but the size of the collection is the loss of RAM. Is not preferred for large collections. |
+> | options.auto_create_backup | `false` | [Boolean] (optional)<br/>If this is enabled, this collection will create automatic backups. |
+> | options.detailed_debugger_logs | `false` | [Boolean] (optional)<br/>If this is enabled, it will print more events in the collection to the console. |
+> | options.activate_destroy_function | `false` | [Boolean] (optional)<br/>[IMPORTANT] If this is enabled, the `<Collection>.Destroy()` function becomes operable. This command serves to destroy your collection completely. It is a dangerous command. |
 > 
 > Example:
 > ```js
@@ -129,7 +139,7 @@ Create a collection where you can manage and store your data.
 >   "cache_retention_time": 10,
 >   "backup_retention_time": 3,
 >   "caching": true,
->   "auto_backup": true,
+>   "auto_create_backup": true,
 >   "detailed_debugger_logs": true,
 >   "activate_destroy_function": false
 > });
@@ -137,13 +147,13 @@ Create a collection where you can manage and store your data.
 
 ### Methods
 
-`insert(data)` *(document based)*
+`insert(document)` *(document based)*
 
 Insert a document.
 
 > | Parameter | Description |
 > | --- | --- |
-> | data | [Object]<br/>The data to be written to the collection. |
+> | document | [Object]<br/>The document to be written to the collection. |
 > 
 > returns [Object]
 > 
@@ -268,14 +278,14 @@ Check if they have document.
 
 <br/>
 
-`update(document_id, data)` *(document based)*
+`update(document_id, document)` *(document based)*
 
 Update a document.
 
 > | Parameter | Description |
 > | --- | --- |
 > | document_id | [String]<br/>The ID of the document to be updated. |
-> | data | [Object]<br/>Data to be updated in the document. |
+> | document | [Object]<br/>The document to be updated in the collection. |
 > 
 > returns [Object]
 > 
@@ -538,20 +548,20 @@ Increase the number in the value.
 
 <br/>
 
-`reduce(key, value)` *(key-value based)*
+`decrease(key, value)` *(key-value based)*
 
-Reduce the number in the value.
+Decrease the number in the value.
 
 > | Parameter | Description |
 > | --- | --- |
 > | key | [String] \| [Number]<br/>Key to value. |
-> | value | [Number]<br/>The number to decrease. |
+> | value | [Number]<br/>The number to be decremented. |
 > 
 > returns [Number]
 > 
 > Example:
 > ```js
-> user_settings.reduce("USER_1.age", 5); // -> 11
+> user_settings.decrease("USER_1.age", 5); // -> 11
 > ```
 
 <br/>
@@ -573,15 +583,32 @@ Reduce the number in the value.
 
 <br/>
 
-`backup()`
+`createBackup()`
 
-Backup the collection.
+Create a backup of the collection.
 
+> returns [String]<[BackupFilename]> | [Boolean]
+> 
+> Example:
+> ```js
+> collection.createBackup(); // -> EXAMPLE_COLLECTION_2022-03-20_AUTO.pea
+> ```
+
+<br/>
+
+`loadBackup(filename)`
+
+Load the backup.
+
+> | Parameter | Description |
+> | --- | --- |
+> | filename | [String]<br/>The filename of the backup. |
+> 
 > returns [Boolean]
 > 
 > Example:
 > ```js
-> collection.backup(); // -> true
+> collection.loadBackup("EXAMPLE_COLLECTION_2022-03-20_AUTO.pea"); // -> true
 > ```
 
 <br/>

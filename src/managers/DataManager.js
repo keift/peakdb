@@ -1,4 +1,4 @@
-const Debugger = require("../utils/Debugger.js")
+const Debugger = require("../util/Debugger.js")
     , bson = require("bson");
 class Manager {
     constructor(e, t) {
@@ -23,4 +23,4 @@ class Manager {
         }, 1e3 * (t.save_timeout || 1)), !0))
     }
 }
-module.exports = Manager;
+module.exports.Manager = Manager;
