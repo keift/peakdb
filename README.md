@@ -598,7 +598,7 @@ Create a backup of the collection.
 
 `loadBackup(filename)`
 
-Load the backup.
+Load a backup to the collection.
 
 > | Parameter | Description |
 > | --- | --- |
