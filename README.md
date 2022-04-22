@@ -568,7 +568,7 @@ Decrease the number in the value.
 
 `delete(key)` *(key-value based)*
 
-Reduce the number in the value.
+Delete a key.
 
 > | Parameter | Description |
 > | --- | --- |
