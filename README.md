@@ -591,7 +591,7 @@ Create a backup of the collection.
 > 
 > Example:
 > ```js
-> collection.createBackup(); // -> EXAMPLE_COLLECTION_2022-03-20_AUTO.pea
+> example_collection.createBackup(); // -> EXAMPLE_COLLECTION_2022-03-20_AUTO.pea
 > ```
 
 <br/>
@@ -608,7 +608,7 @@ Load a backup to the collection.
 > 
 > Example:
 > ```js
-> collection.loadBackup("EXAMPLE_COLLECTION_2022-03-20_AUTO.pea"); // -> true
+> example_collection.loadBackup("EXAMPLE_COLLECTION_2022-03-20_AUTO.pea"); // -> true
 > ```
 
 <br/>
@@ -621,7 +621,7 @@ Destroy the collection.
 > 
 > Example:
 > ```js
-> collection.destroy(); // -> true
+> example_collection.destroy(); // -> true
 > ```
 
 ## License
