@@ -8,10 +8,10 @@
 <div align="center">
   <img src="https://i.ibb.co/mbJC8yX/unknown.png" width="512px"/>
   <br/>
-  <img src="https://badgen.net/npm/v/peak.db"/>
-  <img src="https://badgen.net/npm/license/peak.db"/>
-  <img src="https://badgen.net/npm/node/peak.db"/>
-  <img src="https://badgen.net/npm/dt/peak.db"/>
+  <img src="https://badgen.net/npm/v/peakdb"/>
+  <img src="https://badgen.net/npm/license/peakdb"/>
+  <img src="https://badgen.net/npm/node/peakdb"/>
+  <img src="https://badgen.net/npm/dt/peakdb"/>
 </div>
 
 ## Contents
@@ -26,13 +26,13 @@
 
 ## About
 
-Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.
+Fast and advanced, document-based and key-value-based NoSQL database.
 
 ## Features
 
   * NoSQL database
   * Can be run as it is installed
-  * Can be used document based and key-value based
+  * Can be used document-based and key-value-based
   * Customizable settings for collections
   * No need to use schema
   * Quick data reading and writing
@@ -49,15 +49,36 @@ Fast and advanced, document based and key-value based NoSQL database that able t
     * **`<Collection>.LoadBackup()` added.** With this function, you can easily restore backups.
     * **`<Collection>.CreateBackup()` returns changed.** Now this function, if successful, will return the filename of the backed up collection on its return.
     * **`<CollectionOptions>.Auto_Backup` changed.** This option will now be used as `auto_create_backup`.
-  * Updates for Key-Value Based Collections:
+  * Updates for Key-Value-Based Collections:
     * **`<Collection>.Reduce()` changed.** This function will now be used as `decrease()`.
+
+### v2.1.0 → v2.2.0
+
+  * Updates for System:
+    * **Bugs fixed.** Fixed some bugs in the system.
+    * **`<CollectionOptions>.Indicate_Archived_At<[Boolean]>` added.** If this is enabled, will be automatically specified date when documents are archived.
+    * **`<CollectionOptions>.Indicate_Archived_Timestamp<[Boolean]>` added.** If this is enabled, will be automatically specified timestamp when documents are archived.
+    * **`<CollectionOptions>.Indicate_Unarchived_At<[Boolean]>` added.** If this is enabled, will be automatically specified date when documents are unarchived.
+    * **`<CollectionOptions>.Indicate_Unarchived_Timestamp<[Boolean]>` added.** If this is enabled, will be automatically specified timestamp when documents are unarchived.
+  * Updates for document-based Collections:
+    * **`<Collection>.Archive()` added.** By archiving a document, you can have it ignored by the system.
+    * **`<Collection>.Unarchive()` added.** You can extract the archived document from the archive.
+    * **`<Collection>.Find(..., options)` added.** You can customize it with options to find.
+    * **`<Collection>.Filter(..., options)` added.** You can customize it with options to filter.
+    * **`<Collection>.Has(..., options)` added.** You can customize it with options to check.
+    * **`<FindOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to find archived documents or not.
+    * **`<FilterOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to filter archived documents or not.
+    * **`<HasOptions>.Archived<[Boolean]>` added.** With this option you can specify whether to check archived documents or not.
+  * Updates for Key-Value-Based Collections:
+    * **`<Collection>.Find()` added.** You can find the data in the array.
+    * **`<Collection>.Filter()` added.** You can filter the data in the array.
 
 [*... see all*](CHANGELOG.md#change-log)
 
 ## Installation
 
 ```sh-session
-npm install peak.db
+npm install peakdb
 ```
 
 ## Documentation
@@ -73,15 +94,15 @@ Create a collection where you can manage and store your data.
 > | options | | [Object]<br/>Collection options. |
 > | options.name | | [String]<br/>Name of collection. |
 > | options.type | | [String]<br/>[IMPORTANT] Type of the collection, which cannot be changed again later.<br/><br/>Valid values: `DOCUMENT_BASED`, `KEY_VALUE_BASED` |
-> | options.id_length | `32` | [Number] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>This determines the length of unique identities given to documents. |
-> | options.indicate_created_at | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the creation date of documents. |
-> | options.indicate_created_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the creation timestamp of documents. |
-> | options.indicate_edited_at | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the edited date of documents. |
-> | options.indicate_edited_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the edited timestamp of documents. |
-> | options.indicate_archived_at | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the archived at of documents. |
-> | options.indicate_archived_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the archived timestamp of documents. |
-> | options.indicate_unarchived_at | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the unarchived at of documents. |
-> | options.indicate_unarchived_timestamp | `false` | [Boolean] (optional) **[DOCUMENT BASED COLLECTIONS]**<br/>Whether to specify the unarchived timestamp of documents. |
+> | options.id_length | `32` | [Number] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>This determines the length of unique identities given to documents. |
+> | options.indicate_created_at | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the creation date of documents. |
+> | options.indicate_created_timestamp | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the creation timestamp of documents. |
+> | options.indicate_edited_at | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the edited date of documents. |
+> | options.indicate_edited_timestamp | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the edited timestamp of documents. |
+> | options.indicate_archived_at | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the archived at of documents. |
+> | options.indicate_archived_timestamp | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the archived timestamp of documents. |
+> | options.indicate_unarchived_at | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the unarchived at of documents. |
+> | options.indicate_unarchived_timestamp | `false` | [Boolean] (optional) **[DOCUMENT-BASED COLLECTIONS]**<br/>Whether to specify the unarchived timestamp of documents. |
 > | options.save_timeout | `1` | [Number] (optional)<br/>This specifies how many seconds after a document is inserted, the collection will be saved. This way it limits the successive saving of the collection when many data are inserted in succession, so the system is not slowed down. Data loss may occur if the system is turned off after repeatedly entering data. When the document is added 5 times in a row, the collection is saved so that the data does not remain unsaved for a long time. This can be edited with the 'save_directly_after' option. |
 > | options.save_directly_after | `5` | [Number] (optional)<br/>This specifies that after how many documents have been inserted, the collection will be saved without the save timeout. |
 > | options.cache_retention_time | `10` | [Number] (optional)<br/>[If this value is `-1`, the cache is kept indefinitely] This specifies how many minutes the cache will be retained if caching is enabled. If there is no activity in the collection, the cache is cleared, thus preventing RAM loss. |
@@ -98,7 +119,7 @@ Create a collection where you can manage and store your data.
 >   "type": "DOCUMENT_BASED",
 >   
 >   /*
->     For document based collections
+>     For document-based collections
 >   */
 >   "id_length": 32,
 >   "indicate_created_at": false,
@@ -126,7 +147,7 @@ Create a collection where you can manage and store your data.
 
 ### Methods
 
-`insert(document)` *(document based)*
+`insert(document)` *(document-based)*
 
 Insert a document.
 
@@ -156,7 +177,7 @@ Insert a document.
 
 <br/>
 
-`find(params, options)` *(document based)*
+`find(params, options)` *(document-based)*
 
 Find a document.
 
@@ -190,7 +211,7 @@ Find a document.
 
 <br/>
 
-`filter(params, options)` *(document based)*
+`filter(params, options)` *(document-based)*
 
 Filter documents.
 
@@ -237,7 +258,7 @@ Filter documents.
 
 <br/>
 
-`has(params, options)` *(document based)*
+`has(params, options)` *(document-based)*
 
 Check if they have document.
 
@@ -257,7 +278,7 @@ Check if they have document.
 
 <br/>
 
-`update(document_id, document)` *(document based)*
+`update(document_id, document)` *(document-based)*
 
 Update a document.
 
@@ -291,7 +312,7 @@ Update a document.
 
 <br/>
 
-`archive(document_id)` *(document based)*
+`archive(document_id)` *(document-based)*
 
 Archive a document.
 
@@ -309,7 +330,7 @@ Archive a document.
 
 <br/>
 
-`unarchive(document_id)` *(document based)*
+`unarchive(document_id)` *(document-based)*
 
 Unarchive a document.
 
@@ -327,7 +348,7 @@ Unarchive a document.
 
 <br/>
 
-`delete(document_id)` *(document based)*
+`delete(document_id)` *(document-based)*
 
 Delete a document.
 
@@ -345,7 +366,7 @@ Delete a document.
 
 <br/>
 
-`set(key, value)` *(key-value based)*
+`set(key, value)` *(key-value-based)*
 
 Set a value.
 
@@ -368,7 +389,7 @@ Set a value.
 
 <br/>
 
-`get(key)` *(key-value based)*
+`get(key)` *(key-value-based)*
 
 Get a value.
 
@@ -385,7 +406,7 @@ Get a value.
 
 <br/>
 
-`push(key, data)` *(key-value based)*
+`push(key, data)` *(key-value-based)*
 
 Push a data to array.
 
@@ -408,7 +429,7 @@ Push a data to array.
 
 <br/>
 
-`remove(key, data)` *(key-value based)*
+`remove(key, data)` *(key-value-based)*
 
 Remove a data from array.
 
@@ -429,7 +450,7 @@ Remove a data from array.
 
 <br/>
 
-`find(key, params)` *(key-value based)*
+`find(key, params)` *(key-value-based)*
 
 Find a data from array.
 
@@ -455,7 +476,7 @@ Find a data from array.
 
 <br/>
 
-`filter(key, params)` *(key-value based)*
+`filter(key, params)` *(key-value-based)*
 
 Filter data from array.
 
@@ -487,7 +508,7 @@ Filter data from array.
 
 <br/>
 
-`has(key, params)` *(key-value based)*
+`has(key, params)` *(key-value-based)*
 
 Check if they have key or data.
 
@@ -508,7 +529,7 @@ Check if they have key or data.
 
 <br/>
 
-`increase(key, value)` *(key-value based)*
+`increase(key, value)` *(key-value-based)*
 
 Increase the number in the value.
 
@@ -527,7 +548,7 @@ Increase the number in the value.
 
 <br/>
 
-`decrease(key, value)` *(key-value based)*
+`decrease(key, value)` *(key-value-based)*
 
 Decrease the number in the value.
 
@@ -545,7 +566,7 @@ Decrease the number in the value.
 
 <br/>
 
-`delete(key)` *(key-value based)*
+`delete(key)` *(key-value-based)*
 
 Delete a key.
 
