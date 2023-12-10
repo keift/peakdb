@@ -1,6 +1,6 @@
 {
   "name": "peak.db",
-  "author": "paiode",
+  "author": "keift",
   "version": "2.3.7",
   "description": "Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.",
   "license": "MIT",
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/paiode/peak.db.git"
+    "url": "git+https://github.com/keift/peakdb.git"
   },
   "keywords": [
     "peak",
