@@ -6,3 +6,4 @@ updates:
       interval: "daily"
     ignore:
       - dependency-name: "axios"
+      - dependency-name: "nanoid"
