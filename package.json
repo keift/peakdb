@@ -1,5 +1,5 @@
 {
-  "name": "peak.db",
+  "name": "peakdb",
   "author": "keift",
   "version": "2.3.7",
   "description": "Fast and advanced, document based and key-value based NoSQL database that able to work as it is installed.",
