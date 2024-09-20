@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    versioning-strategy: "increase"
     ignore:
+      - dependency-name: "atomically"
       - dependency-name: "axios"
       - dependency-name: "nanoid"
