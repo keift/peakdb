@@ -9,7 +9,7 @@
     "axios": "^0.26.1",
     "better-sqlite3": "^10.0.0",
     "bson": "^6.2.0",
-    "find-remove": "^4.0.4",
+    "find-remove": "^5.0.0",
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
     "nanoid": "^3.3.7",
