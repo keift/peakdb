@@ -6,7 +6,7 @@
 [Boolean]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean
 
 <div align="center">
-  <img src="https://i.ibb.co/mbJC8yX/unknown.png" width="512px"/>
+  <span>PeakDB</span>
   <br/>
   <img src="https://badgen.net/npm/v/peakdb"/>
   <img src="https://badgen.net/npm/license/peakdb"/>
