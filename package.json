@@ -6,7 +6,7 @@
   "license": "MIT",
   "main": "main.js",
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^1.7.9",
     "better-sqlite3": "^10.0.0",
     "bson": "^6.2.0",
     "find-remove": "^4.0.4",
