@@ -12,7 +12,7 @@
     "find-remove": "^4.0.4",
     "fs": "^0.0.1-security",
     "lodash": "^4.17.21",
-    "nanoid": "^3.3.7",
+    "nanoid": "^5.0.9",
     "path": "^0.12.7"
   },
   "engines": {
