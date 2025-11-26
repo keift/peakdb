@@ -1,3 +1,4 @@
+
 [Function]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
 [String]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
 [Number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number
@@ -14,45 +15,55 @@
   <img src="https://badgen.net/npm/dt/peakdb"/>
 </div>
 
-## Contents
+# PeakDB
 
-  * [About](#about)
-  * [Features](#features)
-  * [Installation](#installation)
-  * [Links](#links)
+## 📖 İçindekiler (Contents)
+* [Hakkında (About)](#about)
+* [Özellikler (Features)](#features)
+* [Kurulum (Installation)](#installation)
+* [Bağlantılar (Links)](#links)
 
-## About
+---
 
-Fast and advanced, document-based and key-value-based NoSQL database.
+## Hakkında (About)
 
-## Features
+Hızlı ve gelişmiş, **doküman tabanlı** ve **anahtar-değer tabanlı** bir NoSQL veritabanıdır.
 
-  * NoSQL database
-  * Can be run as it is installed
-  * Can be used document-based and key-value-based
-  * Customizable settings for collections
-  * No need to use schema
-  * Quick data reading and writing
-  * Data can be kept in cache
-  * Easy to find data
-  * Automatically or manual backup
+## Özellikler (Features)
 
-## Installation
+* NoSQL veritabanı
+* Kurulduğu gibi çalıştırılabilir
+* Hem doküman tabanlı hem de anahtar-değer tabanlı kullanılabilir
+* Koleksiyonlar için özelleştirilebilir ayarlar
+* Şema (Schema) kullanma zorunluluğu yoktur
+* Hızlı veri okuma ve yazma
+* Veriler önbellekte (cache) tutulabilir
+* Kolay veri bulma (arama)
+* Otomatik veya manuel yedekleme
 
-NPM
-```sh-session
+## Kurulum (Installation)
+
+### NPM
+```sh
 npm install peakdb
-```
-Yarn
-```sh-session
+````
+
+### Yarn
+
+```sh
 yarn add peakdb
 ```
 
-## Links
+-----
 
-  * [Documentation](https://peakdb.paiode.cf/api-docs)
-  * [Change Log](CHANGELOG.md#change-log)
+## Bağlantılar (Links)
 
-## License
+  * [Dokümantasyon](https://peakdb.paiode.cf/api-docs)
+  * [Değişiklik Kaydı](https://www.google.com/search?q=CHANGELOG.md%23change-log)
+
+-----
+
+## Lisans (License)
 
 [MIT](LICENSE.md)
+
